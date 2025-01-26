@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr7xeec6n4jrt"]
+
+[ext_resource type="Script" path="res://Scenes/Gauge/gauge.gd" id="1_qeqnt"]
+
+[node name="Gauge" type="Node"]
+script = ExtResource("1_qeqnt")

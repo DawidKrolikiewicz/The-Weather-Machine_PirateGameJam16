@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://kxe1njtsgrqi"]
+
+[ext_resource type="Script" path="res://Scenes/WeatherZone/weather_zone.gd" id="1_kd8wb"]
+[ext_resource type="Resource" uid="uid://04ubxxg63r5x" path="res://Resources/Rain.tres" id="2_oyg8u"]
+[ext_resource type="Texture2D" uid="uid://gqgbf58dt2ss" path="res://Assets/cloud.png" id="3_1fstp"]
+[ext_resource type="Texture2D" uid="uid://boifsnk1pq061" path="res://Assets/icon.svg" id="3_koxby"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1m234"]
+radius = 40.0
+height = 200.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ihd2s"]
+radius = 40.0
+height = 200.0
+
+[node name="WeatherZone" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_kd8wb")
+data = ExtResource("2_oyg8u")
+
+[node name="Axle" type="Node2D" parent="."]
+
+[node name="DirectionMarker" type="Marker2D" parent="Axle"]
+position = Vector2(50, 0)
+
+[node name="Line2D" type="Line2D" parent="Axle"]
+visible = false
+points = PackedVector2Array(0, 0, 50, 0)
+default_color = Color(1, 0, 0, 1)
+
+[node name="DragArea2D" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DragArea2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_1m234")
+
+[node name="EffectArea2D" type="Area2D" parent="."]
+position = Vector2(0, 50)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EffectArea2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ihd2s")
+
+[node name="Visual" type="Node2D" parent="."]
+scale = Vector2(0.25, 0.25)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Visual"]
+amount = 40
+lifetime = 0.65
+texture = ExtResource("3_koxby")
+emission_shape = 3
+emission_rect_extents = Vector2(350, 1)
+gravity = Vector2(0, 400)
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+
+[node name="WeatherSprite" type="Sprite2D" parent="Visual"]
+y_sort_enabled = true
+texture = ExtResource("3_1fstp")
+
+[node name="LifetimeTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="mouse_entered" from="DragArea2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="DragArea2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="timeout" from="LifetimeTimer" to="." method="_on_lifetime_timer_timeout"]

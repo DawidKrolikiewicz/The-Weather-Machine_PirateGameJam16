@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnjv60xpl1ucx"]
+
+[ext_resource type="Script" path="res://Scenes/WeatherSpawner/weather_spawner.gd" id="1_gecuu"]
+[ext_resource type="Script" path="res://Resources/WeatherData.gd" id="2_2ce6v"]
+[ext_resource type="Resource" uid="uid://04ubxxg63r5x" path="res://Resources/Rain.tres" id="3_w7pw5"]
+[ext_resource type="Resource" uid="uid://bliiam1pb8a43" path="res://Resources/SunRays.tres" id="4_p1vcs"]
+
+[node name="WeatherSpawner" type="Node2D"]
+script = ExtResource("1_gecuu")
+weathers_to_spawn = Array[ExtResource("2_2ce6v")]([ExtResource("3_w7pw5"), ExtResource("4_p1vcs")])
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

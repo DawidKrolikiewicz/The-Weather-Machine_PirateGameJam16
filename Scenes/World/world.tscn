@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=4 uid="uid://unhljf3ntfce"]
+
+[ext_resource type="Script" path="res://Scenes/World/world.gd" id="1_i3y6u"]
+[ext_resource type="Texture2D" uid="uid://tapld24kqpc4" path="res://Assets/Map_Grassy-cliffs.png" id="2_s74ft"]
+[ext_resource type="PackedScene" uid="uid://qxtblvxyh17l" path="res://Scenes/POISpawner/poi_spawner.tscn" id="3_f6k65"]
+[ext_resource type="Script" path="res://Scenes/World/Panning.gd" id="3_isqjt"]
+[ext_resource type="PackedScene" uid="uid://bnjv60xpl1ucx" path="res://Scenes/WeatherSpawner/weather_spawner.tscn" id="3_ysf26"]
+[ext_resource type="PackedScene" uid="uid://xj2ossa2nq1j" path="res://Scenes/POIGrid/poi_grid.tscn" id="4_vydq0"]
+[ext_resource type="PackedScene" uid="uid://1jyxmaw0srxp" path="res://Scenes/UI/ui.tscn" id="6_jsm7p"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_i3y6u")
+
+[node name="UI" parent="." instance=ExtResource("6_jsm7p")]
+
+[node name="TickTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("2_s74ft")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("3_isqjt")
+
+[node name="POISpawner" parent="." node_paths=PackedStringArray("poi_grid") instance=ExtResource("3_f6k65")]
+position = Vector2(0, 40)
+poi_grid = NodePath("POIGrid")
+
+[node name="POIGrid" parent="POISpawner" instance=ExtResource("4_vydq0")]
+visible = false
+position = Vector2(-2, 50)
+tile_map_data = PackedByteArray("AAADAAAAAAAAAAAAAAACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD9////AAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP7/AAAAAAAAAAADAP7/AAAAAAAAAAACAP7/AAAAAAAAAAABAP7/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAD9//7/AAAAAAAAAAD7/wAAAAAAAAAAAAD8////AAAAAAAAAAD8//7/AAAAAAAAAAD7/wEAAAAAAAAAAAD8/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAAEAP//AAAAAAAAAAAEAP3/AAAAAAAAAAADAP3/AAAAAAAAAAACAP3/AAAAAAAAAAABAP3/AAAAAAAAAAAAAP3/AAAAAAAAAAD///3/AAAAAAAAAAD+//3/AAAAAAAAAAD9//3/AAAAAAAAAAAFAP7/AAAAAAAAAAA=")
+
+[node name="WeatherSpawner" parent="." instance=ExtResource("3_ysf26")]
+y_sort_enabled = true
+
+[connection signal="button_pressed" from="UI" to="." method="_on_ui_button_pressed"]
+[connection signal="timeout" from="TickTimer" to="." method="_on_tick_timer_timeout"]

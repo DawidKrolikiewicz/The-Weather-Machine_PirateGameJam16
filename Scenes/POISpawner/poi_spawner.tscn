@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://qxtblvxyh17l"]
+
+[ext_resource type="Script" path="res://Scenes/POISpawner/poi_spawner.gd" id="1_qdc4x"]
+
+[node name="POISpawner" type="Node2D"]
+script = ExtResource("1_qdc4x")

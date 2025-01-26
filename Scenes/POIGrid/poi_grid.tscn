@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://xj2ossa2nq1j"]
+
+[ext_resource type="Texture2D" uid="uid://shlswljnuvvp" path="res://Assets/192x192tiles.png" id="1_vgqoi"]
+[ext_resource type="Script" path="res://Scenes/POIGrid/poi_grid.gd" id="2_50onq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u1ixu"]
+texture = ExtResource("1_vgqoi")
+texture_region_size = Vector2i(192, 192)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_c76k5"]
+tile_shape = 2
+tile_layout = 2
+tile_size = Vector2i(192, 192)
+sources/0 = SubResource("TileSetAtlasSource_u1ixu")
+
+[node name="POIGrid" type="TileMapLayer"]
+modulate = Color(1, 1, 1, 0.392157)
+tile_set = SubResource("TileSet_c76k5")
+script = ExtResource("2_50onq")
