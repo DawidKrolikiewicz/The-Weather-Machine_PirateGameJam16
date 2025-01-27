@@ -6,7 +6,11 @@ signal button_pressed(id: int)
 @onready var h_box_container: HBoxContainer = $BottomPanel/HBoxContainer/PanelButtons/HBoxContainer
 @onready var label: Label = $BottomPanel/HBoxContainer/PanelMoneyDisplay/Label
 @onready var pause_menu: Control = $PauseMenu
-@onready var info_label: Label = $BottomPanel/HBoxContainer/PanelHoverDisplay/InfoLabel
+
+@onready var info_h_box_container: HBoxContainer = $BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer
+@onready var info_label_water: Label = $BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/Control1/InfoLabel
+@onready var info_label_food: Label = $BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/Control2/InfoLabel
+@onready var info_label_happy: Label = $BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/Control3/InfoLabel
 
 
 func _ready() -> void:
@@ -16,13 +20,18 @@ func _ready() -> void:
 	SignalBus.display_weather_info.connect(_on_display_weather_info)
 	
 func _process(delta: float) -> void:
-	info_label.text = ""
+	info_h_box_container.visible = false
+	if Input.is_action_just_pressed("Pause"):
+		_on_pause_button_button_down()
 	
 func _on_my_button_pressed(id: int) -> void:
 	button_pressed.emit(id)
 	
 func _on_display_weather_info(data: WeatherData) -> void:
-	info_label.text = "Water: %d\nFood: %d\nHappy: %d" % [data.water_per_tick, data.food_per_tick, data.happy_per_tick]
+	info_h_box_container.visible = true
+	info_label_water.text = "Water: %d" % data.water_per_tick
+	info_label_food.text = "Food: %d" % data.food_per_tick
+	info_label_happy.text = "Happy: %d" % data.happy_per_tick
 	
 func update_label(value: float) -> void:
 	label.text = "%.2f$" % value

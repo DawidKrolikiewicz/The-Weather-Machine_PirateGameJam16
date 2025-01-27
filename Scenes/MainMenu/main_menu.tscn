@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/MainMenu/main_menu.gd" id="1_htc5b"]
 [ext_resource type="Texture2D" uid="uid://dm7e3vlwx7pp3" path="res://Assets/main_menu.png" id="1_nvel5"]
 [ext_resource type="Texture2D" uid="uid://drlio7rcex7ii" path="res://Assets/play_button.png" id="3_5ni5p"]
-[ext_resource type="PackedScene" uid="uid://b3oesmcbna55s" path="res://Scenes/PauseMenu/pause_menu.tscn" id="4_mn8jc"]
+[ext_resource type="PackedScene" uid="uid://dfhl6k0oq6mkj" path="res://Scenes/MenuSettings/menu_settings.tscn" id="5_y60ju"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_htc5b")
@@ -22,7 +22,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_nvel5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Viewport"]
+[node name="Buttons" type="VBoxContainer" parent="Viewport"]
 layout_mode = 0
 offset_left = 104.0
 offset_top = 517.0
@@ -31,20 +31,23 @@ offset_bottom = 1047.0
 scale = Vector2(0.6, 0.6)
 theme_override_constants/separation = 40
 
-[node name="PlayButton" type="TextureButton" parent="Viewport/VBoxContainer"]
+[node name="PlayButton" type="TextureButton" parent="Viewport/Buttons"]
 layout_mode = 2
 texture_normal = ExtResource("3_5ni5p")
 
-[node name="OptionsButton" type="Button" parent="Viewport/VBoxContainer"]
-custom_minimum_size = Vector2(700, 430)
+[node name="OptionsButton" type="Button" parent="Viewport/Buttons"]
+custom_minimum_size = Vector2(700, 180)
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
-text = "OPTIONS (BOOTLEG AF, RN JUST KIND OF OPENS THE PAUSE MENU - WILL CHANGE LATER PROBABLY)"
+text = "OPTIONS"
 autowrap_mode = 2
 
-[node name="PauseMenu" parent="Viewport" instance=ExtResource("4_mn8jc")]
+[node name="MenuSettings" parent="Viewport" instance=ExtResource("5_y60ju")]
 visible = false
-layout_mode = 1
+offset_left = 165.0
+offset_top = 751.0
+offset_right = 205.0
+offset_bottom = 791.0
 
-[connection signal="button_down" from="Viewport/VBoxContainer/PlayButton" to="." method="_on_play_button_button_down"]
-[connection signal="button_down" from="Viewport/VBoxContainer/OptionsButton" to="." method="_on_options_button_button_down"]
+[connection signal="button_down" from="Viewport/Buttons/PlayButton" to="." method="_on_play_button_button_down"]
+[connection signal="button_down" from="Viewport/Buttons/OptionsButton" to="." method="_on_options_button_button_down"]
