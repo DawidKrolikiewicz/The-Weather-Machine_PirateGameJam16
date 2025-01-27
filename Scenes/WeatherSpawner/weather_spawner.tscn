@@ -8,6 +8,8 @@
 [node name="WeatherSpawner" type="Node2D"]
 script = ExtResource("1_gecuu")
 weathers_to_spawn = Array[ExtResource("2_2ce6v")]([ExtResource("3_w7pw5"), ExtResource("4_p1vcs")])
+base_weather_weights = Array[float]([10.0, 90.0])
+weight_modifiers = Array[float]([2.0, -2.0])
 
 [node name="Timer" type="Timer" parent="."]
 
