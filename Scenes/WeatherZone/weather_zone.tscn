@@ -83,7 +83,7 @@ y_sort_enabled = true
 scale = Vector2(1.65, 1.65)
 texture = ExtResource("4_xfon5")
 hframes = 5
-vframes = 3
+vframes = 4
 region_rect = Rect2(0, 0, 512, 512)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Visual"]
