@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://1jyxmaw0srxp"]
+[gd_scene load_steps=5 format=3 uid="uid://1jyxmaw0srxp"]
 
 [ext_resource type="Script" path="res://Scenes/UI/ui.gd" id="1_x4qi6"]
 [ext_resource type="PackedScene" uid="uid://05xy1so6sljt" path="res://Scenes/Button/button.tscn" id="2_4plhr"]
 [ext_resource type="PackedScene" uid="uid://b3oesmcbna55s" path="res://Scenes/PauseMenu/pause_menu.tscn" id="3_4ldio"]
+[ext_resource type="PackedScene" uid="uid://iqwfcj1jwxhp" path="res://Scenes/GameOverPanel/game_over_panel.tscn" id="4_txf64"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_x4qi6")
@@ -196,6 +197,9 @@ grow_vertical = 2
 text = "MENU"
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_4ldio")]
+visible = false
+
+[node name="GameOverPanel" parent="." instance=ExtResource("4_txf64")]
 visible = false
 
 [connection signal="button_down" from="BottomPanel/HBoxContainer/PanelPause/PauseButton" to="." method="_on_pause_button_button_down"]

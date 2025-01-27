@@ -4,14 +4,17 @@ class_name World
 @onready var ui: UI = $UI
 @onready var tick_timer: Timer = $TickTimer
 
+var total_money: float = 0
 var money: float = 0:
 	set(value):
 		money = value
+		total_money = value
 		ui.update_label(value)
 
 func _ready() -> void:
 	SignalBus.add_money.connect(_on_add_money)
 	SignalBus.game_speed_changed.connect(_on_game_speed_changed)
+	SignalBus.game_over.connect(_on_game_over)
 	_on_game_speed_changed()
 	
 func _on_tick_timer_timeout() -> void:
@@ -30,3 +33,6 @@ func _on_ui_button_pressed(id: int) -> void:
 			print("Money set to 0")
 		_:
 			printerr("NOT IMPLEMENTED: Button %d" % id)
+
+func _on_game_over() -> void:
+	SignalBus.game_over_score.emit(total_money)

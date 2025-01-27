@@ -4,6 +4,10 @@ class_name POI
 signal attempt_to_spawn_new_poi(pos)
 signal destory_me(me)
 
+@export var poi_types: Array[POIType]
+
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
 @onready var water_bar: GaugeBar = $LabelsTop/CenterContainer/VBoxContainer/WaterBar
 @onready var food_bar: GaugeBar = $LabelsTop/CenterContainer/VBoxContainer/FoodBar
 @onready var happy_bar: GaugeBar = $LabelsTop/CenterContainer/VBoxContainer/HappyBar
@@ -26,10 +30,18 @@ signal destory_me(me)
 var threshhold: float = 60
 var base_money: float = 0.5
 
-var ticks_to_spawn_new: int = 10
+var ticks_to_spawn_new: int = 60
 var spawn_new_count: int = 0
 
 func _ready() -> void:
+	var poi_type: POIType = poi_types[randi_range(0, poi_types.size() - 1)]
+	
+	water_gauge.value_per_tick = poi_type.water_per_tick
+	food_gauge.value_per_tick = poi_type.food_per_tick
+	happy_gauge.value_per_tick = poi_type.happy_per_tick
+	
+	sprite_2d.texture = poi_type.texture
+	
 	SignalBus.tick.connect(_on_tick_timer_timeout)
 	update_progress_bar(water_gauge, water_bar)
 	update_progress_bar(food_gauge, food_bar)

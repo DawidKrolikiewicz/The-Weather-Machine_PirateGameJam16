@@ -22,11 +22,12 @@ func _on_to_menu_button_button_down() -> void:
 	SceneTransition.change_scene(main_menu_scene_path)
 	
 func _on_music_vol_slider_value_changed(value: float) -> void:
-	Settings.music_volume = value
+	Settings.music_volume = int(value)
 	
 func _on_sfx_vol_slider_value_changed(value: float) -> void:
-	Settings.sfx_volume = value
+	Settings.sfx_volume = int(value)
 	
 func _on_game_speed_slider_value_changed(value: float) -> void:
-	Settings.game_speed = value
+	Settings.game_speed = int(value)
+	label.text = "Game Speed: %3d%%" % value
 	

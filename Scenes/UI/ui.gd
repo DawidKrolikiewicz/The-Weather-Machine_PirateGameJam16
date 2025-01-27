@@ -6,6 +6,7 @@ signal button_pressed(id: int)
 @onready var h_box_container: HBoxContainer = $BottomPanel/HBoxContainer/PanelButtons/HBoxContainer
 @onready var label: Label = $BottomPanel/HBoxContainer/PanelMoneyDisplay/Label
 @onready var pause_menu: Control = $PauseMenu
+@onready var game_over_panel: PanelContainer = $GameOverPanel
 
 @onready var info_h_box_container: HBoxContainer = $BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer
 @onready var info_label_water: Label = $BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/Control1/InfoLabel
@@ -18,6 +19,7 @@ func _ready() -> void:
 		button.my_button_pressed.connect(_on_my_button_pressed)
 		
 	SignalBus.display_weather_info.connect(_on_display_weather_info)
+	SignalBus.game_over.connect(_on_game_over)
 	
 func _process(delta: float) -> void:
 	info_h_box_container.visible = false
@@ -43,3 +45,6 @@ func _on_pause_button_button_down() -> void:
 	else:
 		Engine.time_scale = 1
 		pause_menu.visible = false
+		
+func _on_game_over() -> void:
+	game_over_panel.visible = true
