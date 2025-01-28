@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccpeyybplfwih"
+path="res://.godot/imported/purchased declined.wav-9c7b925a3c0991e100d7320a9c6b43bc.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/purchased declined.wav"
+dest_files=["res://.godot/imported/purchased declined.wav-9c7b925a3c0991e100d7320a9c6b43bc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
