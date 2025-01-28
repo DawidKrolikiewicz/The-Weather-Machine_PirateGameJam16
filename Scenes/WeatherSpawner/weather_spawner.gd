@@ -3,15 +3,19 @@ class_name WeatherSpawner
 
 @export var positive_weathers: Array[WeatherData] = [] 
 @export var neutral_weathers: Array[WeatherData] = [] 
+@export var negative_weathers: Array[WeatherData] = []
 
 @export var positive_chance: float = 80.0 
 @export var neutral_chance: float = 20.0  
+@export var negative_chance: float = 0.0  
 
 @export var positive_chance_modifier: float = -1.0  
 @export var neutral_chance_modifier: float = 1.0  
+@export var negative_chance_modifier: float = 0.0  
 
 @export var min_positive_chance: float = 30.0 
 @export var max_neutral_chance: float = 70.0  
+@export var max_negative_chance: float = 0.0 
 
 @export var min_weight: float = 0.0  
 @export var max_weight: float = 100.0 
@@ -58,8 +62,10 @@ func get_random_weather_data() -> WeatherData:
 
 	if random_value < positive_chance:
 		return select_weather_from_group(positive_weathers)
-	else:
+	elif random_value < positive_chance + neutral_chance:
 		return select_weather_from_group(neutral_weathers)
+	else:
+		return select_weather_from_group(negative_weathers)
 		
 func select_weather_from_group(weathers: Array[WeatherData]) -> WeatherData:
 	var index = randi() % weathers.size()
@@ -83,5 +89,11 @@ func update_weather_weights() -> void:
 		0,
 		max_neutral_chance
 	)
+	
+	negative_chance = clamp(
+		negative_chance + negative_chance_modifier,
+		0,
+		max_negative_chance
+	)
 
-	print("Positive chance:", positive_chance, "Neutral chance:", neutral_chance)
+	print("Positive chance:", positive_chance, "Neutral chance:", neutral_chance, "Negative chance:", negative_chance)
