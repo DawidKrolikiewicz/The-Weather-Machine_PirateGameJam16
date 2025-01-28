@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://unhljf3ntfce"]
 
 [ext_resource type="Script" path="res://Scenes/World/world.gd" id="1_i3y6u"]
-[ext_resource type="Texture2D" uid="uid://tapld24kqpc4" path="res://Assets/Map_Grassy-cliffs.png" id="2_s74ft"]
+[ext_resource type="Texture2D" uid="uid://tapld24kqpc4" path="res://Assets/Sprites/_Other/Map_Grassy-cliffs.png" id="2_s74ft"]
 [ext_resource type="PackedScene" uid="uid://qxtblvxyh17l" path="res://Scenes/POISpawner/poi_spawner.tscn" id="3_f6k65"]
 [ext_resource type="Script" path="res://Scenes/World/Panning.gd" id="3_isqjt"]
 [ext_resource type="PackedScene" uid="uid://bnjv60xpl1ucx" path="res://Scenes/WeatherSpawner/weather_spawner.tscn" id="3_ysf26"]

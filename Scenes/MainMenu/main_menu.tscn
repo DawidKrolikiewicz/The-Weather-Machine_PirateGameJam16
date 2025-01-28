@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://fwxxvgxtggel"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/main_menu.gd" id="1_htc5b"]
-[ext_resource type="Texture2D" uid="uid://dm7e3vlwx7pp3" path="res://Assets/main_menu.png" id="1_nvel5"]
-[ext_resource type="Texture2D" uid="uid://drlio7rcex7ii" path="res://Assets/play_button.png" id="3_5ni5p"]
+[ext_resource type="Texture2D" uid="uid://dm7e3vlwx7pp3" path="res://Assets/Sprites/_Other/main_menu.png" id="1_nvel5"]
+[ext_resource type="Texture2D" uid="uid://drlio7rcex7ii" path="res://Assets/Sprites/_Other/play_button.png" id="3_5ni5p"]
 [ext_resource type="PackedScene" uid="uid://dfhl6k0oq6mkj" path="res://Scenes/MenuSettings/menu_settings.tscn" id="5_y60ju"]
 
 [node name="MainMenu" type="CanvasLayer"]
