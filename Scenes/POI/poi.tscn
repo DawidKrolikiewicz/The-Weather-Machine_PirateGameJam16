@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://brbp33rcxu3da" path="res://Resources/POIType/Industry.tres" id="4_rjvf4"]
 [ext_resource type="Texture2D" uid="uid://dr3g5k67fturr" path="res://Assets/Sprites/Bubble/Happiness_Blank_Spread.png" id="5_2o12b"]
 [ext_resource type="Resource" uid="uid://bmkcrnspjmo1f" path="res://Resources/POIType/Nature.tres" id="5_shg37"]
-[ext_resource type="Texture2D" uid="uid://bnnnxe08q73uq" path="res://Assets/Sprites/WeatherZones/water.png" id="6_lvpop"]
+[ext_resource type="Texture2D" uid="uid://bnnnxe08q73uq" path="res://Assets/Sprites/Bubble/water.png" id="6_lvpop"]
 [ext_resource type="Texture2D" uid="uid://cqt516h16nye6" path="res://Assets/Sprites/Bubble/food.png" id="7_4wp14"]
 [ext_resource type="Texture2D" uid="uid://b02bd7p8skkd6" path="res://Assets/Sprites/Bubble/happy.png" id="8_4j0wc"]
 [ext_resource type="AudioStream" uid="uid://bsa2iytimdxrd" path="res://Assets/Sounds/Blop_Poi_Spawn.wav" id="13_7qsj1"]
