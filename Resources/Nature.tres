@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="POIType" load_steps=3 format=3 uid="uid://bmkcrnspjmo1f"]
+
+[ext_resource type="Script" path="res://Resources/POIType.gd" id="1_gm3xb"]
+[ext_resource type="Texture2D" uid="uid://beb8g5li524x3" path="res://Assets/poi_nature_1.png" id="2_s4wkl"]
+
+[resource]
+script = ExtResource("1_gm3xb")
+texture = ExtResource("2_s4wkl")
+water_per_tick = -2
+food_per_tick = -2
+happy_per_tick = -2

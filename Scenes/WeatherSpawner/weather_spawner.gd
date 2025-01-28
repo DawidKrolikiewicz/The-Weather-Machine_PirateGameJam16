@@ -22,7 +22,7 @@ func _on_timer_timeout() -> void:
 
 func randomize_timer_wait_time() -> void:
 	#timer.wait_time = randi_range(10, 30)
-	timer.wait_time = 1
+	timer.wait_time = 5
 
 func spawn_weather_zone() -> void:
 	var instance: WeatherZone = weather_zone.instantiate()

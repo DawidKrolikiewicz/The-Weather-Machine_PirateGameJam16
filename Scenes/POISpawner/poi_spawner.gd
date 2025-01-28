@@ -11,6 +11,10 @@ func _ready() -> void:
 	## WARNING: THIS CAN SPAWN MORE THAN ONE ON TOP OF EACHOTHER - REWORK PROBABLY
 	for i in range(initial_spawn_count):
 		spawn_poi(Vector2(randi_range(-300,300), randi_range(-300,300)))
+		
+func _process(_delta: float) -> void:
+	if get_child_count() <= 1:
+			SignalBus.game_over.emit()
 
 func spawn_poi(pos: Vector2) -> void:
 	# MAP TO GRID COORDINATES
