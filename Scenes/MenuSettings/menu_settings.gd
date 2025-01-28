@@ -16,10 +16,10 @@ func _ready() -> void:
 	game_speed_slider.value = Settings.game_speed
 
 func _on_music_vol_slider_value_changed(value: float) -> void:
-	Settings.music_volume = int(value)
+	Settings.music_volume = value
 	
 func _on_sfx_vol_slider_value_changed(value: float) -> void:
-	Settings.sfx_volume = int(value)
+	Settings.sfx_volume = value
 	
 func _on_game_speed_slider_value_changed(value: float) -> void:
 	Settings.game_speed = int(value)

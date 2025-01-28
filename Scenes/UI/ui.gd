@@ -21,7 +21,7 @@ func _ready() -> void:
 	SignalBus.display_weather_info.connect(_on_display_weather_info)
 	SignalBus.game_over.connect(_on_game_over)
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	info_h_box_container.visible = false
 	if Input.is_action_just_pressed("Pause"):
 		_on_pause_button_button_down()

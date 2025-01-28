@@ -12,7 +12,7 @@ func _ready() -> void:
 	for i in range(initial_spawn_count):
 		spawn_poi(Vector2(randi_range(-300,300), randi_range(-300,300)))
 		
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if get_child_count() <= 1:
 			SignalBus.game_over.emit()
 
