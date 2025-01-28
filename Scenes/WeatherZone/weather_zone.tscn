@@ -92,14 +92,9 @@ amount = 19
 process_material = SubResource("ParticleProcessMaterial_j3p1v")
 texture = ExtResource("5_gvwfw")
 
-[node name="LifetimeTimer" type="Timer" parent="."]
-one_shot = true
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 57)
-scale = Vector2(0.245, 0.245)
+[node name="Sprite2D" type="Sprite2D" parent="Visual"]
+position = Vector2(0, 228)
 texture = ExtResource("5_tj7wh")
 
 [connection signal="mouse_entered" from="DragArea2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="DragArea2D" to="." method="_on_area_2d_mouse_exited"]
-[connection signal="timeout" from="LifetimeTimer" to="." method="_on_lifetime_timer_timeout"]

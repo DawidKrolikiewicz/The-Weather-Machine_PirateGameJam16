@@ -20,29 +20,25 @@ class_name WeatherSpawner
 @export var min_weight: float = 0.0  
 @export var max_weight: float = 100.0 
 
-@onready var timer: Timer = $Timer
-
 var weathers_array : Array[WeatherZone] = []
+var max_weather_count: int = 8
+
+var tick_counter: int = 0
+
 var weather_zone: PackedScene = preload("res://Scenes/WeatherZone/weather_zone.tscn")
 
 func _ready() -> void:
-	randomize_timer_wait_time()
-	timer.start()
+	SignalBus.tick.connect(_on_tick_timer_timeout)
 
-	spawn_weather_zone()
-	spawn_weather_zone()
-	spawn_weather_zone()
-
-
-func _on_timer_timeout() -> void:
-	randomize_timer_wait_time()
+func _on_tick_timer_timeout() -> void:
+	tick_counter += 1
+	if tick_counter >= 30: # Every 30 ticks increase max weather count
+		tick_counter = 0
+		max_weather_count += 2
+		
 	update_weather_weights()
-	spawn_weather_zone()
-	#print(weathers_array)
-
-func randomize_timer_wait_time() -> void:
-	#timer.wait_time = randi_range(10, 30)
-	timer.wait_time = 5
+	if weathers_array.size() < max_weather_count:
+		spawn_weather_zone()
 
 func spawn_weather_zone() -> void:
 	var instance: WeatherZone = weather_zone.instantiate()
@@ -96,4 +92,4 @@ func update_weather_weights() -> void:
 		max_negative_chance
 	)
 
-	print("Positive chance:", positive_chance, "Neutral chance:", neutral_chance, "Negative chance:", negative_chance)
+	print("Positive chance:", positive_chance, " | Neutral chance:", neutral_chance, " | Negative chance:", negative_chance)
