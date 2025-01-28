@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5i6124i4uog6"]
+[gd_scene load_steps=7 format=3 uid="uid://c5i6124i4uog6"]
 
 [ext_resource type="Script" path="res://_Globals/SceneTransition/scene_transition.gd" id="1_2pq6l"]
+[ext_resource type="AudioStream" uid="uid://jlncspf5cgi5" path="res://Assets/Sounds/click cloud or button.wav" id="2_aspi2"]
 
 [sub_resource type="Animation" id="Animation_oc4bb"]
 length = 0.001
@@ -73,3 +74,8 @@ color = Color(0, 0, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_8y2m2")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_aspi2")
+volume_db = 5.0
+bus = &"SFX"
