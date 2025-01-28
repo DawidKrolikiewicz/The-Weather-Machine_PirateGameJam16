@@ -24,6 +24,7 @@ signal destory_me(me)
 @onready var productivity_gauge: Gauge = $Gauges/ProductivityGauge
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 @export var show_icons: bool = false
 
@@ -47,6 +48,8 @@ func _ready() -> void:
 	update_progress_bar(food_gauge, food_bar)
 	update_progress_bar(happy_gauge, happy_bar)
 	update_progress_bar(health_gauge, health_bar)
+	
+	audio_stream_player.play()
 	
 func on_tick(data: WeatherData) -> void:
 	water_gauge.value += data.water_per_tick
