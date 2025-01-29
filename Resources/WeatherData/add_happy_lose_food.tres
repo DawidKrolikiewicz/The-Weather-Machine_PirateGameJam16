@@ -6,7 +6,7 @@
 script = ExtResource("1_nb0pm")
 name = "add_happy_lose_food"
 water_per_tick = 0
-food_per_tick = -2
+food_per_tick = -5
 happy_per_tick = 5
 tick_rate = 1.0
 speed = 40
