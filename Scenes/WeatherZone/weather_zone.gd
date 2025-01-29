@@ -31,7 +31,7 @@ var mouse_in: bool = false
 var follow: bool = false
 
 var life_start: bool = false
-var lifetime: int
+var lifetime: float
 
 func _ready() -> void:
 	SignalBus.tick.connect(_on_tick_timer_timeout)
@@ -68,7 +68,7 @@ func _ready() -> void:
 	tween.tween_property(visual, "scale", Vector2(0.25, 0.25) * size/200, data.form_time / (Settings.game_speed/100))
 	await tween.finished
 	
-	lifetime = randi_range(data.min_lifetime, data.max_lifetime)
+	lifetime = randf_range(data.min_lifetime, data.max_lifetime)
 	life_start = true
 	
 func _process(delta: float) -> void:

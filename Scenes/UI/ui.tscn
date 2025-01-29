@@ -98,35 +98,34 @@ alignment = 1
 
 [node name="Button1" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
 layout_mode = 2
-id = 1
 
 [node name="Button2" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
 layout_mode = 2
-id = 2
+id = 1
 
 [node name="Button3" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
 layout_mode = 2
-id = 3
+id = 2
 
 [node name="Button4" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
 layout_mode = 2
-id = 4
+id = 3
 
 [node name="Button5" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
 layout_mode = 2
-id = 5
+id = 4
 
 [node name="Button6" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
 layout_mode = 2
-id = 6
+id = 5
 
 [node name="Button7" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
 layout_mode = 2
-id = 7
+id = 6
 
 [node name="Button8" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
 layout_mode = 2
-id = 8
+id = 7
 
 [node name="PanelHoverDisplay" type="Control" parent="BottomPanel/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)

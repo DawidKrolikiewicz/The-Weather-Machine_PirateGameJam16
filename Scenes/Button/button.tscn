@@ -1,15 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://05xy1so6sljt"]
+[gd_scene load_steps=2 format=3 uid="uid://05xy1so6sljt"]
 
 [ext_resource type="Script" path="res://Scenes/Button/button.gd" id="1_s3ikw"]
-[ext_resource type="AudioStream" uid="uid://cwd2amoc08ydx" path="res://Assets/Sounds/buy_item.wav" id="2_3gsbm"]
 
 [node name="Button" type="Button"]
 custom_minimum_size = Vector2(75, 75)
 size_flags_vertical = 4
 script = ExtResource("1_s3ikw")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_3gsbm")
-bus = &"SFX"
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]

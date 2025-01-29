@@ -4,6 +4,14 @@ class_name World
 @onready var ui: UI = $UI
 @onready var tick_timer: Timer = $TickTimer
 
+@export var button_spawns: Array[WeatherData]
+@export var prices: Array[float]
+
+@onready var weather_spawner: WeatherSpawner = $WeatherSpawner
+
+@onready var button_bought: AudioStreamPlayer = $ButtonBought
+@onready var button_not_enough_money: AudioStreamPlayer = $ButtonNotEnoughMoney
+
 var total_money: float = 0
 var money: float = 0:
 	set(value):
@@ -27,12 +35,20 @@ func _on_game_speed_changed() -> void:
 	tick_timer.wait_time = 100 / Settings.game_speed
 	
 func _on_ui_button_pressed(id: int) -> void:
-	match id:
-		1:
-			money = 0
-			print("Money set to 0")
-		_:
-			printerr("NOT IMPLEMENTED: Button %d" % id)
+	if attempt_to_buy(prices[id]):
+		weather_spawner.player_spawn_weather_zone(button_spawns[id])
+		button_bought.play()
+	else:
+		button_not_enough_money.play()
 
 func _on_game_over() -> void:
 	SignalBus.game_over_score.emit(total_money)
+	
+func attempt_to_buy(price: float) -> bool:
+	if money >= price:
+		money -= price
+		return true
+	else:
+		return false
+		
+	
