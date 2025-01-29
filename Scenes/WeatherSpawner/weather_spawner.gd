@@ -94,3 +94,10 @@ func update_weather_weights() -> void:
 	)
 
 	print("Positive chance:", positive_chance, " | Neutral chance:", neutral_chance, " | Negative chance:", negative_chance)
+
+func player_spawn_weather_zone(data: WeatherData) -> void:
+	var instance: WeatherZone = weather_zone.instantiate()
+	instance.position = Vector2(randi_range(-300, 300), randi_range(-300, 300))
+	instance.data = data
+	add_child(instance)
+	instance.disolve_finished.connect(_on_weather_disolved)
