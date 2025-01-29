@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://unhljf3ntfce"]
+[gd_scene load_steps=17 format=4 uid="uid://unhljf3ntfce"]
 
 [ext_resource type="Script" path="res://Scenes/World/world.gd" id="1_i3y6u"]
 [ext_resource type="Script" path="res://Resources/_Scripts/WeatherData.gd" id="2_psc3a"]
@@ -7,17 +7,20 @@
 [ext_resource type="Resource" uid="uid://04ubxxg63r5x" path="res://Resources/WeatherData/Rain.tres" id="3_ik5f4"]
 [ext_resource type="Script" path="res://Scenes/World/Panning.gd" id="3_isqjt"]
 [ext_resource type="PackedScene" uid="uid://bnjv60xpl1ucx" path="res://Scenes/WeatherSpawner/weather_spawner.tscn" id="3_ysf26"]
+[ext_resource type="Resource" uid="uid://bhds6fh8y0aoi" path="res://Resources/WeatherData/cheese.tres" id="4_j8dix"]
 [ext_resource type="PackedScene" uid="uid://xj2ossa2nq1j" path="res://Scenes/POIGrid/poi_grid.tscn" id="4_vydq0"]
-[ext_resource type="Resource" uid="uid://tjwsbtxfqw6e" path="res://Resources/WeatherData/food.tres" id="4_x0ufm"]
 [ext_resource type="AudioStream" uid="uid://cwd2amoc08ydx" path="res://Assets/Sounds/buy_item.wav" id="5_06rxy"]
 [ext_resource type="Resource" uid="uid://bliiam1pb8a43" path="res://Resources/WeatherData/SunRays.tres" id="5_08u7u"]
+[ext_resource type="Resource" uid="uid://dofgqqxwpwlf3" path="res://Resources/WeatherData/BigRain.tres" id="6_4afhm"]
 [ext_resource type="AudioStream" uid="uid://ccpeyybplfwih" path="res://Assets/Sounds/purchased declined.wav" id="6_7aept"]
 [ext_resource type="PackedScene" uid="uid://1jyxmaw0srxp" path="res://Scenes/UI/ui.tscn" id="6_jsm7p"]
+[ext_resource type="Resource" uid="uid://b7atf7provad3" path="res://Resources/WeatherData/BigCheese.tres" id="7_ag4s0"]
+[ext_resource type="Resource" uid="uid://db4q4u2vrl8bk" path="res://Resources/WeatherData/BigSun.tres" id="8_71f7t"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_i3y6u")
-button_spawns = Array[ExtResource("2_psc3a")]([ExtResource("3_ik5f4"), ExtResource("4_x0ufm"), ExtResource("5_08u7u")])
-prices = Array[float]([10.0, 1.0, 5.0])
+button_spawns = Array[ExtResource("2_psc3a")]([ExtResource("3_ik5f4"), ExtResource("4_j8dix"), ExtResource("5_08u7u"), ExtResource("6_4afhm"), ExtResource("7_ag4s0"), ExtResource("8_71f7t")])
+prices = Array[float]([5.0, 5.0, 5.0, 20.0, 20.0, 20.0])
 
 [node name="UI" parent="." instance=ExtResource("6_jsm7p")]
 

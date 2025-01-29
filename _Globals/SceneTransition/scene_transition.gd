@@ -14,6 +14,6 @@ func change_scene(new_scene: String) -> void:
 	await animation_player.animation_finished
 	visible = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("RMB"):
 		audio_stream_player.play()

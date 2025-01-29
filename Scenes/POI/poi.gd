@@ -31,7 +31,7 @@ signal destory_me(me)
 var threshhold: float = 60
 var base_money: float = 0.5
 
-var ticks_to_spawn_new: int = 60
+var ticks_to_spawn_new: int = 40
 var spawn_new_count: int = 0
 
 func _ready() -> void:

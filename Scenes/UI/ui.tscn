@@ -1,13 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://1jyxmaw0srxp"]
+[gd_scene load_steps=15 format=3 uid="uid://1jyxmaw0srxp"]
 
 [ext_resource type="Script" path="res://Scenes/UI/ui.gd" id="1_x4qi6"]
 [ext_resource type="PackedScene" uid="uid://05xy1so6sljt" path="res://Scenes/Button/button.tscn" id="2_4plhr"]
 [ext_resource type="FontFile" uid="uid://bq4gwgx4x12bq" path="res://Assets/Font/Arvo-Bold.ttf" id="2_s8gkt"]
 [ext_resource type="PackedScene" uid="uid://b3oesmcbna55s" path="res://Scenes/PauseMenu/pause_menu.tscn" id="3_4ldio"]
+[ext_resource type="Theme" uid="uid://b4eehqk1i47uc" path="res://Resources/BrighterButtonTheme.tres" id="3_nt67h"]
 [ext_resource type="FontFile" uid="uid://erthirrvag8q" path="res://Assets/Font/Arvo-Regular.ttf" id="4_p7n3j"]
 [ext_resource type="PackedScene" uid="uid://iqwfcj1jwxhp" path="res://Scenes/GameOverPanel/game_over_panel.tscn" id="4_txf64"]
+[ext_resource type="Texture2D" uid="uid://c3wdcjk7rrx42" path="res://Assets/Sprites/_Other/stat_water_1.png" id="5_am1ue"]
 [ext_resource type="Texture2D" uid="uid://sivhymq6gnbs" path="res://Assets/Font/text.png" id="5_u2l5w"]
+[ext_resource type="Texture2D" uid="uid://xw7dp1nysl6c" path="res://Assets/Sprites/_Other/stat_food_1.png" id="6_fup2h"]
 [ext_resource type="Texture2D" uid="uid://bfhliimgcembp" path="res://Assets/Font/textpressed.png" id="6_xpfd2"]
+[ext_resource type="Texture2D" uid="uid://oy3adqrbanig" path="res://Assets/Sprites/_Other/stat_happiness_1.png" id="7_62iue"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1qwf"]
 atlas = ExtResource("5_u2l5w")
@@ -93,39 +97,169 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_nt67h")
 theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Button1" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
 layout_mode = 2
 
+[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_p7n3j")
+theme_override_font_sizes/font_size = 22
+text = "5$"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button1"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button1/CenterContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("5_am1ue")
+expand_mode = 1
+
 [node name="Button2" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
 layout_mode = 2
 id = 1
+
+[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_p7n3j")
+theme_override_font_sizes/font_size = 22
+text = "5$"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button2"]
+custom_minimum_size = Vector2(60, 60)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button2/CenterContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("6_fup2h")
+expand_mode = 1
 
 [node name="Button3" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
 layout_mode = 2
 id = 2
 
+[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_p7n3j")
+theme_override_font_sizes/font_size = 22
+text = "5$"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button3"]
+custom_minimum_size = Vector2(60, 60)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect2" type="TextureRect" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button3/CenterContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("7_62iue")
+expand_mode = 1
+
 [node name="Button4" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
 layout_mode = 2
 id = 3
+
+[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_p7n3j")
+theme_override_font_sizes/font_size = 22
+text = "20$"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button4"]
+custom_minimum_size = Vector2(60, 60)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_am1ue")
+expand_mode = 1
 
 [node name="Button5" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
 layout_mode = 2
 id = 4
 
+[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_p7n3j")
+theme_override_font_sizes/font_size = 22
+text = "20$"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button5"]
+custom_minimum_size = Vector2(60, 60)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_fup2h")
+expand_mode = 1
+
 [node name="Button6" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
 layout_mode = 2
 id = 5
 
+[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_p7n3j")
+theme_override_font_sizes/font_size = 22
+text = "20$"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button6"]
+custom_minimum_size = Vector2(60, 60)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_62iue")
+expand_mode = 1
+
 [node name="Button7" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
 layout_mode = 2
 id = 6
-
-[node name="Button8" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
-layout_mode = 2
-id = 7
 
 [node name="PanelHoverDisplay" type="Control" parent="BottomPanel/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
