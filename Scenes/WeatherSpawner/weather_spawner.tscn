@@ -1,18 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bnjv60xpl1ucx"]
+[gd_scene load_steps=4 format=3 uid="uid://bnjv60xpl1ucx"]
 
 [ext_resource type="Script" path="res://Scenes/WeatherSpawner/weather_spawner.gd" id="1_gecuu"]
 [ext_resource type="Script" path="res://Resources/_Scripts/WeatherData.gd" id="2_2ce6v"]
 [ext_resource type="Resource" uid="uid://04ubxxg63r5x" path="res://Resources/WeatherData/Rain.tres" id="3_w7pw5"]
-[ext_resource type="Resource" uid="uid://bliiam1pb8a43" path="res://Resources/WeatherData/SunRays.tres" id="4_p1vcs"]
-[ext_resource type="Resource" uid="uid://tjwsbtxfqw6e" path="res://Resources/WeatherData/food.tres" id="5_ufaek"]
-[ext_resource type="Resource" uid="uid://cxncfj67oqpwo" path="res://Resources/WeatherData/add_water_lose_happy.tres" id="6_2l4uc"]
-[ext_resource type="Resource" uid="uid://d2w0838fcok0e" path="res://Resources/WeatherData/add_water_lose_food.tres" id="7_qlt7s"]
-[ext_resource type="Resource" uid="uid://bsbubrb4r35ut" path="res://Resources/WeatherData/add_happy_lose_water.tres" id="8_kit33"]
-[ext_resource type="Resource" uid="uid://cnr47lid1a85f" path="res://Resources/WeatherData/add_happy_lose_food.tres" id="9_l7e7q"]
-[ext_resource type="Resource" uid="uid://catb45bbnqw1r" path="res://Resources/WeatherData/add_food_lose_water.tres" id="10_1g850"]
-[ext_resource type="Resource" uid="uid://bv8aegji66gj7" path="res://Resources/WeatherData/add_food_lose_happy.tres" id="11_2m8qu"]
 
 [node name="WeatherSpawner" type="Node2D"]
 script = ExtResource("1_gecuu")
-positive_weathers = Array[ExtResource("2_2ce6v")]([ExtResource("4_p1vcs"), ExtResource("3_w7pw5"), ExtResource("5_ufaek")])
-neutral_weathers = Array[ExtResource("2_2ce6v")]([ExtResource("6_2l4uc"), ExtResource("7_qlt7s"), ExtResource("8_kit33"), ExtResource("9_l7e7q"), ExtResource("10_1g850"), ExtResource("11_2m8qu")])
+positive_weathers = Array[ExtResource("2_2ce6v")]([ExtResource("3_w7pw5")])
+neutral_weathers = Array[ExtResource("2_2ce6v")]([ExtResource("3_w7pw5")])
+negative_weathers = Array[ExtResource("2_2ce6v")]([ExtResource("3_w7pw5")])

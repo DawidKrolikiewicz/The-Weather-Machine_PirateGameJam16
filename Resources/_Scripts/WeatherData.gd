@@ -5,6 +5,19 @@ class_name WeatherData
 ## @experimental
 @export_placeholder("Name here") var name: String
 
+@export_group("WeatherSprite")
+@export var texture: Texture2D = preload("res://Assets/Sprites/WeatherZones/Cloud_spread.png")
+@export var v_frames: int = 4
+@export var h_frames: int = 5
+@export var frame: int = 0
+
+@export_group("Particles")
+@export var particle_texture: Texture2D
+
+@export_group("AnimatedEffects")
+@export var animation_name: String
+
+@export_group("WeatherStats")
 ## Indicates how much this weather effect will affect water parameter
 ## Negative values mean it will subtract from total
 @export_range(-10, 10, 1) var water_per_tick: int = 0
@@ -60,4 +73,4 @@ class_name WeatherData
 @export_range(0, 60, 0.1, "suffix:s") var max_lifetime: float = 30
 
 ## Modulate to be applied to the sprite
-@export var debug_color: Color = Color("0000ff")
+@export var debug_color: Color = Color("ffffff")

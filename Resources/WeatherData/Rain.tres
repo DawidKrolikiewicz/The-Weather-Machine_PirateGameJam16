@@ -1,10 +1,16 @@
-[gd_resource type="Resource" script_class="WeatherData" load_steps=2 format=3 uid="uid://04ubxxg63r5x"]
+[gd_resource type="Resource" script_class="WeatherData" load_steps=3 format=3 uid="uid://04ubxxg63r5x"]
 
 [ext_resource type="Script" path="res://Resources/_Scripts/WeatherData.gd" id="1_db2ft"]
+[ext_resource type="Texture2D" uid="uid://c6gjo34kypplo" path="res://Assets/Sprites/WeatherZones/Cloud_spread.png" id="2_ep3po"]
 
 [resource]
 script = ExtResource("1_db2ft")
 name = "Rain"
+texture = ExtResource("2_ep3po")
+v_frames = 4
+h_frames = 5
+frame = 11
+animation_name = "truck"
 water_per_tick = 5
 food_per_tick = 0
 happy_per_tick = 0
@@ -19,4 +25,4 @@ min_full_size = 150
 max_full_size = 300
 min_lifetime = 10.0
 max_lifetime = 30.0
-debug_color = Color(0, 0, 1, 1)
+debug_color = Color(1, 1, 1, 1)
