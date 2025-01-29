@@ -1,9 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://fwxxvgxtggel"]
+[gd_scene load_steps=10 format=3 uid="uid://fwxxvgxtggel"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/main_menu.gd" id="1_htc5b"]
 [ext_resource type="Texture2D" uid="uid://dm7e3vlwx7pp3" path="res://Assets/main_menu.png" id="1_nvel5"]
-[ext_resource type="Texture2D" uid="uid://drlio7rcex7ii" path="res://Assets/play_button.png" id="3_5ni5p"]
+[ext_resource type="Texture2D" uid="uid://d2gwn4apfgvvj" path="res://Assets/text.png" id="3_lnm74"]
+[ext_resource type="Texture2D" uid="uid://br24b67y4ukyc" path="res://Assets/textpressed.png" id="4_irnya"]
 [ext_resource type="PackedScene" uid="uid://dfhl6k0oq6mkj" path="res://Scenes/MenuSettings/menu_settings.tscn" id="5_y60ju"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75ruc"]
+atlas = ExtResource("3_lnm74")
+region = Rect2(0, 0, 1024, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7216"]
+atlas = ExtResource("4_irnya")
+region = Rect2(0, 0, 1024, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogevh"]
+atlas = ExtResource("3_lnm74")
+region = Rect2(0, 256, 1024, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajs06"]
+atlas = ExtResource("4_irnya")
+region = Rect2(0, 256, 1024, 256)
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_htc5b")
@@ -25,22 +42,23 @@ texture = ExtResource("1_nvel5")
 [node name="Buttons" type="VBoxContainer" parent="Viewport"]
 layout_mode = 0
 offset_left = 104.0
-offset_top = 517.0
-offset_right = 794.0
-offset_bottom = 1047.0
+offset_top = 593.0
+offset_right = 804.0
+offset_bottom = 1123.0
 scale = Vector2(0.6, 0.6)
 theme_override_constants/separation = 40
 
 [node name="PlayButton" type="TextureButton" parent="Viewport/Buttons"]
 layout_mode = 2
-texture_normal = ExtResource("3_5ni5p")
+texture_normal = SubResource("AtlasTexture_75ruc")
+texture_pressed = SubResource("AtlasTexture_d7216")
+texture_hover = SubResource("AtlasTexture_d7216")
 
-[node name="OptionsButton" type="Button" parent="Viewport/Buttons"]
-custom_minimum_size = Vector2(700, 180)
+[node name="OptionsButton" type="TextureButton" parent="Viewport/Buttons"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "OPTIONS"
-autowrap_mode = 2
+texture_normal = SubResource("AtlasTexture_ogevh")
+texture_pressed = SubResource("AtlasTexture_ajs06")
+texture_hover = SubResource("AtlasTexture_ajs06")
 
 [node name="MenuSettings" parent="Viewport" instance=ExtResource("5_y60ju")]
 visible = false

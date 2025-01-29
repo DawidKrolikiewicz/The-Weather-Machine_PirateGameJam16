@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjbu4y6efofaw"
-path="res://.godot/imported/rain.svg-fa9b26d2f80a40287a04d3e1d8e3e03e.ctex"
+uid="uid://2fb22dovri0y"
+path="res://.godot/imported/Truck_Fall.png-61c50d3ea4c92bd28469d433d6abffa9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/rain.svg"
-dest_files=["res://.godot/imported/rain.svg-fa9b26d2f80a40287a04d3e1d8e3e03e.ctex"]
+source_file="res://Assets/Particles/Truck_Fall.png"
+dest_files=["res://.godot/imported/Truck_Fall.png-61c50d3ea4c92bd28469d433d6abffa9.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

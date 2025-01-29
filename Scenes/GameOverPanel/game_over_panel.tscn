@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://iqwfcj1jwxhp"]
+[gd_scene load_steps=6 format=3 uid="uid://iqwfcj1jwxhp"]
 
 [ext_resource type="Script" path="res://Scenes/GameOverPanel/game_over_panel.gd" id="1_7l18y"]
+[ext_resource type="Texture2D" uid="uid://d2gwn4apfgvvj" path="res://Assets/text.png" id="2_gyveh"]
+[ext_resource type="FontFile" uid="uid://dpij2clfuqdep" path="res://Assets/Font/Arvo-Regular.ttf" id="3_ggsob"]
+[ext_resource type="FontFile" uid="uid://53yiorauim7c" path="res://Assets/Font/Arvo-Bold.ttf" id="4_uhxls"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_memql"]
+atlas = ExtResource("2_gyveh")
+region = Rect2(0, 1024, 1024, 256)
 
 [node name="GameOverPanel" type="PanelContainer"]
 anchors_preset = 8
@@ -19,21 +26,25 @@ script = ExtResource("1_7l18y")
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Label1" type="Label" parent="VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 35
-text = "GAME OVER"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_memql")
+expand_mode = 5
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_ggsob")
 theme_override_font_sizes/font_size = 20
 text = "Total money earned: "
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -46,5 +57,7 @@ theme_override_constants/margin_bottom = 10
 [node name="Button" type="Button" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_uhxls")
+text = "BACK TO MENU"
 
 [connection signal="button_down" from="VBoxContainer/MarginContainer/Button" to="." method="_on_button_button_down"]

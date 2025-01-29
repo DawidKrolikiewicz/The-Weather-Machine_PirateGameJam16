@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv6wlfa17wbdq"
-path="res://.godot/imported/spider.svg-52dfda92d0f4b46cc4f1d5f61585834b.ctex"
+uid="uid://bsuxs2fxvko3u"
+path="res://.godot/imported/Lightning_ani.png-1847ba7e552abfb56109e50ae528c366.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/spider.svg"
-dest_files=["res://.godot/imported/spider.svg-52dfda92d0f4b46cc4f1d5f61585834b.ctex"]
+source_file="res://Assets/Particles/Lightning_ani.png"
+dest_files=["res://.godot/imported/Lightning_ani.png-1847ba7e552abfb56109e50ae528c366.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3oesmcbna55s"]
+[gd_scene load_steps=6 format=3 uid="uid://b3oesmcbna55s"]
 
 [ext_resource type="Script" path="res://Scenes/PauseMenu/pause_menu.gd" id="1_07wlw"]
+[ext_resource type="Texture2D" uid="uid://d2gwn4apfgvvj" path="res://Assets/text.png" id="2_tio23"]
+[ext_resource type="FontFile" uid="uid://53yiorauim7c" path="res://Assets/Font/Arvo-Bold.ttf" id="3_i146m"]
+[ext_resource type="FontFile" uid="uid://dpij2clfuqdep" path="res://Assets/Font/Arvo-Regular.ttf" id="4_klom5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qo0ru"]
+atlas = ExtResource("2_tio23")
+region = Rect2(0, 768, 1024, 256)
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -52,28 +59,32 @@ alignment = 1
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CenterContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "PAUSED"
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = SubResource("AtlasTexture_qo0ru")
+expand_mode = 5
 
-[node name="CenterContainer2" type="PanelContainer" parent="VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="CenterContainer2" type="PanelContainer" parent="VBoxContainer/MarginContainer2"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/CenterContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/CenterContainer2"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ToMenuButton" type="Button" parent="VBoxContainer/CenterContainer2/MarginContainer"]
+[node name="ToMenuButton" type="Button" parent="VBoxContainer/MarginContainer2/CenterContainer2/MarginContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Go to menu"
+theme_override_fonts/font = ExtResource("3_i146m")
+theme_override_font_sizes/font_size = 25
+text = "BACK TO MENU"
 
 [node name="CenterContainer3" type="PanelContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(300, 100)
@@ -85,10 +96,12 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/CenterContainer3/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("4_klom5")
+theme_override_font_sizes/font_size = 25
 text = "Music Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/CenterContainer3/VBoxContainer"]
 layout_mode = 2
@@ -112,10 +125,12 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/CenterContainer5/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("4_klom5")
+theme_override_font_sizes/font_size = 25
 text = "SFX Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/CenterContainer5/VBoxContainer"]
 layout_mode = 2
@@ -139,10 +154,12 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/CenterContainer4/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("4_klom5")
+theme_override_font_sizes/font_size = 25
 text = "Game Speed: 100%"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/CenterContainer4/VBoxContainer"]
 layout_mode = 2
@@ -158,7 +175,7 @@ max_value = 250.0
 step = 50.0
 value = 100.0
 
-[connection signal="button_down" from="VBoxContainer/CenterContainer2/MarginContainer/ToMenuButton" to="." method="_on_to_menu_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/MarginContainer2/CenterContainer2/MarginContainer/ToMenuButton" to="." method="_on_to_menu_button_button_down"]
 [connection signal="value_changed" from="VBoxContainer/CenterContainer3/VBoxContainer/MarginContainer/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/CenterContainer5/VBoxContainer/MarginContainer/SFXVolSlider" to="." method="_on_sfx_vol_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/CenterContainer4/VBoxContainer/MarginContainer/GameSpeedSlider" to="." method="_on_game_speed_slider_value_changed"]
