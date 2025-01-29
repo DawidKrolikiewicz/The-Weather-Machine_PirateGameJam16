@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_8eo4j")
 name = "add_food_lose_water"
-water_per_tick = -5
+water_per_tick = -2
 food_per_tick = 5
 happy_per_tick = 0
 tick_rate = 1.0
