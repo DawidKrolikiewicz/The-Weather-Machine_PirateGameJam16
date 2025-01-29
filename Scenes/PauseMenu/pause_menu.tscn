@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3oesmcbna55s"]
+[gd_scene load_steps=6 format=3 uid="uid://b3oesmcbna55s"]
 
 [ext_resource type="Script" path="res://Scenes/PauseMenu/pause_menu.gd" id="1_07wlw"]
+[ext_resource type="Texture2D" uid="uid://sivhymq6gnbs" path="res://Assets/Font/text.png" id="2_yf3tu"]
+[ext_resource type="FontFile" uid="uid://bq4gwgx4x12bq" path="res://Assets/Font/Arvo-Bold.ttf" id="3_jj2wq"]
+[ext_resource type="FontFile" uid="uid://erthirrvag8q" path="res://Assets/Font/Arvo-Regular.ttf" id="4_ewrsk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltuvy"]
+atlas = ExtResource("2_yf3tu")
+region = Rect2(0, 768, 1024, 256)
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -53,11 +60,17 @@ custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/CenterContainer"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "PAUSED"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CenterContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ltuvy")
+expand_mode = 5
 
 [node name="CenterContainer2" type="PanelContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(300, 100)
@@ -72,8 +85,9 @@ theme_override_constants/margin_bottom = 10
 
 [node name="ToMenuButton" type="Button" parent="VBoxContainer/CenterContainer2/MarginContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Go to menu"
+theme_override_fonts/font = ExtResource("3_jj2wq")
+theme_override_font_sizes/font_size = 25
+text = "BACK TO MENU"
 
 [node name="CenterContainer3" type="PanelContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(300, 100)
@@ -85,10 +99,12 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/CenterContainer3/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("4_ewrsk")
+theme_override_font_sizes/font_size = 25
 text = "Music Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/CenterContainer3/VBoxContainer"]
 layout_mode = 2
@@ -112,10 +128,12 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/CenterContainer5/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("4_ewrsk")
+theme_override_font_sizes/font_size = 25
 text = "SFX Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/CenterContainer5/VBoxContainer"]
 layout_mode = 2
@@ -139,10 +157,12 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/CenterContainer4/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("4_ewrsk")
+theme_override_font_sizes/font_size = 25
 text = "Game Speed: 100%"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/CenterContainer4/VBoxContainer"]
 layout_mode = 2

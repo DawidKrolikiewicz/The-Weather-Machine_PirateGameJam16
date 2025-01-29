@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cv6wlfa17wbdq"
-path="res://.godot/imported/spider.svg-cf40865c1e6f2b8968bc5aad22916609.ctex"
+path="res://.godot/imported/spider.svg-8939735176c8d1195cd13623a6dec9bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/WeatherZones/spider.svg"
-dest_files=["res://.godot/imported/spider.svg-cf40865c1e6f2b8968bc5aad22916609.ctex"]
+source_file="res://Assets/Sprites/WeatherZones/Particles/spider.svg"
+dest_files=["res://.godot/imported/spider.svg-8939735176c8d1195cd13623a6dec9bb.ctex"]
 
 [params]
 

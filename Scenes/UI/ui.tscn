@@ -1,9 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://1jyxmaw0srxp"]
+[gd_scene load_steps=11 format=3 uid="uid://1jyxmaw0srxp"]
 
 [ext_resource type="Script" path="res://Scenes/UI/ui.gd" id="1_x4qi6"]
 [ext_resource type="PackedScene" uid="uid://05xy1so6sljt" path="res://Scenes/Button/button.tscn" id="2_4plhr"]
+[ext_resource type="FontFile" uid="uid://bq4gwgx4x12bq" path="res://Assets/Font/Arvo-Bold.ttf" id="2_s8gkt"]
 [ext_resource type="PackedScene" uid="uid://b3oesmcbna55s" path="res://Scenes/PauseMenu/pause_menu.tscn" id="3_4ldio"]
+[ext_resource type="FontFile" uid="uid://erthirrvag8q" path="res://Assets/Font/Arvo-Regular.ttf" id="4_p7n3j"]
 [ext_resource type="PackedScene" uid="uid://iqwfcj1jwxhp" path="res://Scenes/GameOverPanel/game_over_panel.tscn" id="4_txf64"]
+[ext_resource type="Texture2D" uid="uid://sivhymq6gnbs" path="res://Assets/Font/text.png" id="5_u2l5w"]
+[ext_resource type="Texture2D" uid="uid://bfhliimgcembp" path="res://Assets/Font/textpressed.png" id="6_xpfd2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1qwf"]
+atlas = ExtResource("5_u2l5w")
+region = Rect2(0, 512, 1024, 256)
+margin = Rect2(0, 11.99, 0, 25.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6u6w"]
+atlas = ExtResource("6_xpfd2")
+region = Rect2(0, 512, 1024, 256)
+margin = Rect2(0, 11.99, 0, 25.75)
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_x4qi6")
@@ -28,7 +42,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
-color = Color(8.18223e-07, 0.338419, 2.40654e-07, 1)
+color = Color(0.244776, 0.244776, 0.244776, 0.552941)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BottomPanel"]
 custom_minimum_size = Vector2(0, 110)
@@ -60,6 +74,7 @@ offset_right = 80.5
 offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_s8gkt")
 theme_override_font_sizes/font_size = 30
 text = "MONEY: 0$"
 horizontal_alignment = 1
@@ -124,6 +139,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -48.0
+offset_right = -48.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -138,10 +155,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_p7n3j")
 theme_override_font_sizes/font_size = 23
 text = "Water:"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="Control2" type="Control" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer"]
 layout_mode = 2
@@ -154,10 +173,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_p7n3j")
 theme_override_font_sizes/font_size = 23
 text = "Food:"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="Control3" type="Control" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer"]
 layout_mode = 2
@@ -170,31 +191,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_p7n3j")
 theme_override_font_sizes/font_size = 23
 text = "Happiness:"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="PanelPause" type="Control" parent="BottomPanel/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PauseButton" type="Button" parent="BottomPanel/HBoxContainer/PanelPause"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "PAUSE"
+[node name="PanelContainer" type="PanelContainer" parent="BottomPanel/HBoxContainer/PanelPause"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 15.0
+offset_right = 199.8
+offset_bottom = 94.475
+
+[node name="PauseButton" type="TextureButton" parent="BottomPanel/HBoxContainer/PanelPause/PanelContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_g1qwf")
+texture_pressed = SubResource("AtlasTexture_r6u6w")
+texture_hover = SubResource("AtlasTexture_r6u6w")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_4ldio")]
 visible = false
@@ -202,4 +224,4 @@ visible = false
 [node name="GameOverPanel" parent="." instance=ExtResource("4_txf64")]
 visible = false
 
-[connection signal="button_down" from="BottomPanel/HBoxContainer/PanelPause/PauseButton" to="." method="_on_pause_button_button_down"]
+[connection signal="button_down" from="BottomPanel/HBoxContainer/PanelPause/PanelContainer/PauseButton" to="." method="_on_pause_button_button_down"]

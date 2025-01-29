@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfhl6k0oq6mkj"]
+[gd_scene load_steps=3 format=3 uid="uid://dfhl6k0oq6mkj"]
 
 [ext_resource type="Script" path="res://Scenes/MenuSettings/menu_settings.gd" id="1_kexyc"]
+[ext_resource type="FontFile" uid="uid://erthirrvag8q" path="res://Assets/Font/Arvo-Regular.ttf" id="2_xmbv1"]
 
 [node name="MenuSettings" type="Control"]
 layout_mode = 3
@@ -35,10 +36,12 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/CenterContainer3/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_xmbv1")
+theme_override_font_sizes/font_size = 25
 text = "Music Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/CenterContainer3/VBoxContainer"]
 layout_mode = 2
@@ -62,10 +65,12 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/CenterContainer5/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_xmbv1")
+theme_override_font_sizes/font_size = 25
 text = "SFX Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/CenterContainer5/VBoxContainer"]
 layout_mode = 2
@@ -89,10 +94,12 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/CenterContainer4/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_xmbv1")
+theme_override_font_sizes/font_size = 25
 text = "Game Speed: 100%"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/CenterContainer4/VBoxContainer"]
 layout_mode = 2

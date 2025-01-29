@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjbu4y6efofaw"
-path="res://.godot/imported/rain.svg-f6a0f1b41f7a988da28ea3203b0a706e.ctex"
+uid="uid://fbhtspv3r0dk"
+path="res://.godot/imported/crumbs.svg-e44169292fc684df8c71f61f1ccd5478.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/WeatherZones/rain.svg"
-dest_files=["res://.godot/imported/rain.svg-f6a0f1b41f7a988da28ea3203b0a706e.ctex"]
+source_file="res://Assets/Sprites/WeatherZones/Particles/crumbs.svg"
+dest_files=["res://.godot/imported/crumbs.svg-e44169292fc684df8c71f61f1ccd5478.ctex"]
 
 [params]
 
