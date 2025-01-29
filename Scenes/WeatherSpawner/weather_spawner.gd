@@ -65,6 +65,7 @@ func get_random_weather_data() -> WeatherData:
 		
 func select_weather_from_group(weathers: Array[WeatherData]) -> WeatherData:
 	var index = randi() % weathers.size()
+	print(weathers[index])
 	return weathers[index]
 
 func calculate_sum(array: Array[float]) -> int:

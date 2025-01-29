@@ -8,6 +8,9 @@ signal disolve_finished(me)
 
 # VISUAL
 @onready var visual: Node2D = $Visual
+@onready var weather_sprite: Sprite2D = $Visual/WeatherSprite
+@onready var gpu_particles_2d: GPUParticles2D = $Visual/GPUParticles2D
+@onready var animated_effects: AnimatedSprite2D = $Visual/AnimatedEffects
 
 # ROTATION
 @onready var axle: Node2D = $Axle
@@ -36,6 +39,14 @@ func _ready() -> void:
 	visual.scale = Vector2.ZERO
 	
 	visual.modulate = data.debug_color
+	weather_sprite.texture = data.texture
+	weather_sprite.hframes = data.h_frames
+	weather_sprite.vframes = data.v_frames
+	weather_sprite.frame = data.frame
+	gpu_particles_2d.texture = data.particle_texture
+	if data.animation_name:
+		animated_effects.visible = true
+		animated_effects.play(data.animation_name)
 	
 	drag_collision.shape = CapsuleShape2D.new()
 	drag_collision.shape.radius = 0
@@ -57,7 +68,7 @@ func _ready() -> void:
 	tween.tween_property(visual, "scale", Vector2(0.25, 0.25) * size/200, data.form_time / (Settings.game_speed/100))
 	await tween.finished
 	
-	lifetime = randf_range(data.min_lifetime, data.max_lifetime)
+	lifetime = randi_range(data.min_lifetime, data.max_lifetime)
 	life_start = true
 	
 func _process(delta: float) -> void:

@@ -1,8 +1,7 @@
-[gd_scene load_steps=68 format=3 uid="uid://kxe1njtsgrqi"]
+[gd_scene load_steps=67 format=3 uid="uid://kxe1njtsgrqi"]
 
 [ext_resource type="Script" path="res://Scenes/WeatherZone/weather_zone.gd" id="1_kd8wb"]
 [ext_resource type="Resource" uid="uid://04ubxxg63r5x" path="res://Resources/WeatherData/Rain.tres" id="2_oyg8u"]
-[ext_resource type="Texture2D" uid="uid://boifsnk1pq061" path="res://Assets/Sprites/_Other/icon.svg" id="3_koxby"]
 [ext_resource type="Texture2D" uid="uid://c6gjo34kypplo" path="res://Assets/Sprites/WeatherZones/Cloud_spread.png" id="4_xfon5"]
 [ext_resource type="Texture2D" uid="uid://cjbu4y6efofaw" path="res://Assets/Sprites/WeatherZones/Particles/rain.svg" id="5_gvwfw"]
 [ext_resource type="Texture2D" uid="uid://cffsnan30urk6" path="res://Assets/Sprites/WeatherZones/cloud_shadow.png" id="5_tj7wh"]
@@ -451,16 +450,23 @@ shape = SubResource("CapsuleShape2D_ihd2s")
 [node name="Visual" type="Node2D" parent="."]
 scale = Vector2(0.25, 0.25)
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Visual"]
+[node name="Shadow" type="Sprite2D" parent="Visual"]
+position = Vector2(0, 228)
+texture = ExtResource("5_tj7wh")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Visual"]
+position = Vector2(0, 88)
+amount = 19
+process_material = SubResource("ParticleProcessMaterial_j3p1v")
+texture = ExtResource("5_gvwfw")
+
+[node name="AnimatedEffects" type="AnimatedSprite2D" parent="Visual"]
 visible = false
-amount = 40
-lifetime = 0.65
-texture = ExtResource("3_koxby")
-emission_shape = 3
-emission_rect_extents = Vector2(350, 1)
-gravity = Vector2(0, 400)
-scale_amount_min = 0.1
-scale_amount_max = 0.1
+z_index = 1
+position = Vector2(0, 180)
+scale = Vector2(0.675, 0.675)
+sprite_frames = SubResource("SpriteFrames_0id2m")
+animation = &"truck"
 
 [node name="WeatherSprite" type="Sprite2D" parent="Visual"]
 z_index = 2
@@ -470,24 +476,6 @@ texture = ExtResource("4_xfon5")
 hframes = 5
 vframes = 4
 region_rect = Rect2(0, 0, 512, 512)
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Visual"]
-position = Vector2(0, 88)
-amount = 19
-process_material = SubResource("ParticleProcessMaterial_j3p1v")
-texture = ExtResource("5_gvwfw")
-
-[node name="Shadow" type="Sprite2D" parent="Visual"]
-position = Vector2(0, 228)
-texture = ExtResource("5_tj7wh")
-
-[node name="AnimatedEffects" type="AnimatedSprite2D" parent="Visual"]
-z_index = 1
-position = Vector2(0, 180)
-scale = Vector2(0.675, 0.675)
-sprite_frames = SubResource("SpriteFrames_0id2m")
-animation = &"lightning"
-frame_progress = 0.176928
 
 [connection signal="mouse_entered" from="DragArea2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="DragArea2D" to="." method="_on_area_2d_mouse_exited"]
