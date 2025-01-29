@@ -4,5 +4,6 @@
 
 [node name="GameMusic" type="AudioStreamPlayer"]
 stream = ExtResource("1_fhuik")
+volume_db = -7.881
 autoplay = true
 parameters/looping = true

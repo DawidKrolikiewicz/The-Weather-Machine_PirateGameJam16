@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="WeatherData" load_steps=3 format=3 uid="uid://04ubxxg63r5x"]
+[gd_resource type="Resource" script_class="WeatherData" load_steps=4 format=3 uid="uid://04ubxxg63r5x"]
 
 [ext_resource type="Script" path="res://Resources/_Scripts/WeatherData.gd" id="1_db2ft"]
+[ext_resource type="Texture2D" uid="uid://cjbu4y6efofaw" path="res://Assets/Sprites/WeatherZones/Particles/rain.svg" id="1_e3glj"]
 [ext_resource type="Texture2D" uid="uid://c6gjo34kypplo" path="res://Assets/Sprites/WeatherZones/Cloud_spread.png" id="2_ep3po"]
 
 [resource]
@@ -9,8 +10,9 @@ name = "Rain"
 texture = ExtResource("2_ep3po")
 v_frames = 4
 h_frames = 5
-frame = 11
-animation_name = "truck"
+frame = 6
+particle_texture = ExtResource("1_e3glj")
+animation_name = ""
 water_per_tick = 5
 food_per_tick = 0
 happy_per_tick = 0

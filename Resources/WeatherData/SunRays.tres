@@ -1,14 +1,20 @@
-[gd_resource type="Resource" script_class="WeatherData" load_steps=2 format=3 uid="uid://bliiam1pb8a43"]
+[gd_resource type="Resource" script_class="WeatherData" load_steps=3 format=3 uid="uid://bliiam1pb8a43"]
 
 [ext_resource type="Script" path="res://Resources/_Scripts/WeatherData.gd" id="1_dpr4u"]
+[ext_resource type="Texture2D" uid="uid://c6gjo34kypplo" path="res://Assets/Sprites/WeatherZones/Cloud_spread.png" id="2_3g1w7"]
 
 [resource]
 script = ExtResource("1_dpr4u")
 name = "Sun Rays"
+texture = ExtResource("2_3g1w7")
+v_frames = 4
+h_frames = 5
+frame = 2
+animation_name = "lightcone"
 water_per_tick = 0
 food_per_tick = 0
 happy_per_tick = 5
-tick_rate = 1.0
+tick_rate = 0.5
 speed = 40
 speed_mult = 10
 rotation_acceleration = 3
