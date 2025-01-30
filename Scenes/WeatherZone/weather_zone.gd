@@ -77,6 +77,11 @@ func _process(delta: float) -> void:
 		
 	if Input.is_action_just_released("RMB"):
 		follow = false
+		
+	if mouse_in:
+		modulate.a = 0.7
+	else:
+		modulate.a = 1.0
 	
 	# NOTE: SHOULD PROBABLY MULT ROTATION_ACC BY DELTA HONESTLY (SEE: WeatherData RESOURCE)
 	rotation_vel += randf_range(-data.rotation_acceleration, data.rotation_acceleration)
