@@ -16,7 +16,8 @@ var total_money: float = 0
 var money: float = 0:
 	set(value):
 		money = value
-		total_money = value
+		if value > total_money:
+			total_money = value
 		ui.update_label(value)
 
 func _ready() -> void:
@@ -27,6 +28,7 @@ func _ready() -> void:
 	
 func _on_tick_timer_timeout() -> void:
 	SignalBus.tick.emit()
+	print(total_money)
 	
 func _on_add_money(value: float) -> void:
 	money += value
