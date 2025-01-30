@@ -264,6 +264,7 @@ texture = ExtResource("7_62iue")
 expand_mode = 1
 
 [node name="Button7" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
+visible = false
 layout_mode = 2
 disabled = true
 id = 6
