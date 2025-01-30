@@ -264,6 +264,7 @@ expand_mode = 1
 
 [node name="Button7" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer" instance=ExtResource("2_4plhr")]
 layout_mode = 2
+disabled = true
 id = 6
 
 [node name="PanelHoverDisplay" type="Control" parent="BottomPanel/HBoxContainer"]
