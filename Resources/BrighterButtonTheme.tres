@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://b4eehqk1i47uc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nnq1"]
-bg_color = Color(0.462291, 0.462291, 0.46229, 1)
+bg_color = Color(0.188235, 0.188235, 0.188235, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -9,3 +9,5 @@ corner_radius_bottom_left = 5
 
 [resource]
 Button/styles/normal = SubResource("StyleBoxFlat_2nnq1")
+Label/colors/font_shadow_color = Color(0.188235, 0.188235, 0.188235, 1)
+Label/constants/shadow_outline_size = 25
