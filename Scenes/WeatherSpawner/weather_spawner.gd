@@ -38,7 +38,7 @@ func _on_tick_timer_timeout() -> void:
 	elif positive_chance <= 0:
 		positive_chance_modifier = 0
 		negative_chance_modifier = 0
-		negative_chance_modifier = 1
+		negative_chance_modifier = 2
 	
 	tick_counter += 1
 	if tick_counter >= 30: # Every 30 ticks increase max weather count

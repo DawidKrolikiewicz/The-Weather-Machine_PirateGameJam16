@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://1jyxmaw0srxp"]
+[gd_scene load_steps=16 format=3 uid="uid://1jyxmaw0srxp"]
 
 [ext_resource type="Script" path="res://Scenes/UI/ui.gd" id="1_x4qi6"]
 [ext_resource type="PackedScene" uid="uid://05xy1so6sljt" path="res://Scenes/Button/button.tscn" id="2_4plhr"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://xw7dp1nysl6c" path="res://Assets/Sprites/_Other/stat_food_1.png" id="6_fup2h"]
 [ext_resource type="Texture2D" uid="uid://bfhliimgcembp" path="res://Assets/Font/textpressed.png" id="6_xpfd2"]
 [ext_resource type="Texture2D" uid="uid://oy3adqrbanig" path="res://Assets/Sprites/_Other/stat_happiness_1.png" id="7_62iue"]
+[ext_resource type="Theme" uid="uid://cy160lgiabye6" path="res://Resources/BrighterPanelTheme.tres" id="9_os1j8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1qwf"]
 atlas = ExtResource("5_u2l5w")
@@ -274,65 +275,135 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BottomPanel/HBoxContainer/PanelHoverDisplay"]
+custom_minimum_size = Vector2(0, 75)
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -48.0
-offset_right = -48.0
+anchor_bottom = 0.5
+offset_top = -14.5
+offset_bottom = 14.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("9_os1j8")
+theme_override_constants/separation = 15
 
-[node name="Control1" type="Control" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer"]
+[node name="PanelContainer1" type="PanelContainer" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="InfoLabel" type="Label" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/Control1"]
+[node name="Control1" type="HBoxContainer" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/PanelContainer1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/PanelContainer1/Control1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/PanelContainer1/Control1/Control"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("5_am1ue")
+expand_mode = 1
+
+[node name="InfoLabel" type="Label" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/PanelContainer1/Control1"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("4_p7n3j")
 theme_override_font_sizes/font_size = 23
-text = "Water:"
+text = "_"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Control2" type="Control" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer"]
+[node name="PanelContainer2" type="PanelContainer" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="InfoLabel" type="Label" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/Control2"]
+[node name="Control2" type="HBoxContainer" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/PanelContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/PanelContainer2/Control2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/PanelContainer2/Control2/Control"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_fup2h")
+expand_mode = 1
+
+[node name="InfoLabel" type="Label" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/PanelContainer2/Control2"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("4_p7n3j")
 theme_override_font_sizes/font_size = 23
-text = "Food:"
+text = "_"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Control3" type="Control" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer"]
+[node name="PanelContainer3" type="PanelContainer" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="InfoLabel" type="Label" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/Control3"]
+[node name="Control3" type="HBoxContainer" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/PanelContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/PanelContainer3/Control3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/PanelContainer3/Control3/Control"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("7_62iue")
+expand_mode = 1
+
+[node name="InfoLabel" type="Label" parent="BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/PanelContainer3/Control3"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("4_p7n3j")
 theme_override_font_sizes/font_size = 23
-text = "Happiness:"
+text = "_"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true

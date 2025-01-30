@@ -9,9 +9,9 @@ signal button_pressed(id: int)
 @onready var game_over_panel: PanelContainer = $GameOverPanel
 
 @onready var info_h_box_container: HBoxContainer = $BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer
-@onready var info_label_water: Label = $BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/Control1/InfoLabel
-@onready var info_label_food: Label = $BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/Control2/InfoLabel
-@onready var info_label_happy: Label = $BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/Control3/InfoLabel
+@onready var info_label_water: Label = $BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/PanelContainer1/Control1/InfoLabel
+@onready var info_label_food: Label = $BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/PanelContainer2/Control2/InfoLabel
+@onready var info_label_happy: Label = $BottomPanel/HBoxContainer/PanelHoverDisplay/HBoxContainer/PanelContainer3/Control3/InfoLabel
 
 
 func _ready() -> void:
@@ -31,9 +31,9 @@ func _on_my_button_pressed(id: int) -> void:
 	
 func _on_display_weather_info(data: WeatherData) -> void:
 	info_h_box_container.visible = true
-	info_label_water.text = "Water: %d" % data.water_per_tick
-	info_label_food.text = "Food: %d" % data.food_per_tick
-	info_label_happy.text = "Happy: %d" % data.happy_per_tick
+	info_label_water.text = "%d" % data.water_per_tick
+	info_label_food.text = "%d" % data.food_per_tick
+	info_label_happy.text = "%d" % data.happy_per_tick
 	
 func update_label(value: float) -> void:
 	label.text = "%.2f$" % value
