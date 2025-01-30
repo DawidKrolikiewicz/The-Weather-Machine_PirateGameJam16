@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://1jyxmaw0srxp"]
+[gd_scene load_steps=18 format=3 uid="uid://1jyxmaw0srxp"]
 
 [ext_resource type="Script" path="res://Scenes/UI/ui.gd" id="1_x4qi6"]
 [ext_resource type="PackedScene" uid="uid://05xy1so6sljt" path="res://Scenes/Button/button.tscn" id="2_4plhr"]
@@ -13,6 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://bfhliimgcembp" path="res://Assets/Font/textpressed.png" id="6_xpfd2"]
 [ext_resource type="Texture2D" uid="uid://beec7fjtii4q5" path="res://Assets/Sprites/_Other/happy_icon_button.png" id="8_kwmbv"]
 [ext_resource type="Theme" uid="uid://cy160lgiabye6" path="res://Resources/BrighterPanelTheme.tres" id="9_os1j8"]
+
+[sub_resource type="Theme" id="Theme_5e45h"]
+
+[sub_resource type="Theme" id="Theme_384kc"]
+Label/colors/font_shadow_color = Color(0.188235, 0.188235, 0.188235, 1)
+Label/constants/shadow_outline_size = 25
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1qwf"]
 atlas = ExtResource("5_u2l5w")
@@ -58,6 +64,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
+theme = SubResource("Theme_5e45h")
 theme_override_constants/separation = 11
 alignment = 1
 
@@ -79,6 +86,7 @@ offset_right = 80.5
 offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_384kc")
 theme_override_fonts/font = ExtResource("2_s8gkt")
 theme_override_font_sizes/font_size = 30
 text = "MONEY: 0$"
@@ -429,9 +437,9 @@ size_flags_horizontal = 3
 
 [node name="PanelContainer" type="PanelContainer" parent="BottomPanel/HBoxContainer/PanelPause"]
 layout_mode = 0
-offset_left = 31.0
+offset_left = 7.0
 offset_top = 15.0
-offset_right = 199.8
+offset_right = 214.285
 offset_bottom = 94.475
 
 [node name="PauseButton" type="TextureButton" parent="BottomPanel/HBoxContainer/PanelPause/PanelContainer"]

@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://cy160lgiabye6"]
 
-[ext_resource type="FontFile" uid="uid://erthirrvag8q" path="res://Assets/Font/Arvo-Regular.ttf" id="1_3rxox"]
+[ext_resource type="FontFile" uid="uid://bq4gwgx4x12bq" path="res://Assets/Font/Arvo-Bold.ttf" id="1_2upby"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7okur"]
 bg_color = Color(0.188235, 0.188235, 0.188235, 1)
@@ -10,5 +10,6 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [resource]
-Label/fonts/font = ExtResource("1_3rxox")
+Label/font_sizes/font_size = 19
+Label/fonts/font = ExtResource("1_2upby")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_7okur")
