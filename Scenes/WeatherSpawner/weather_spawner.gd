@@ -62,7 +62,7 @@ func _on_weather_disolved(zone: WeatherZone) -> void:
 	zone.queue_free()
 	
 func get_random_weather_data() -> WeatherData:
-	var total_chance = positive_chance + neutral_chance
+	var total_chance = positive_chance + neutral_chance + negative_chance
 	var random_value = randf() * total_chance
 
 	if random_value < positive_chance:
@@ -85,20 +85,20 @@ func calculate_sum(array: Array[float]) -> int:
 func update_weather_weights() -> void:
 	positive_chance = clamp(
 		positive_chance + positive_chance_modifier,
-		min_positive_chance,
+		0,
 		100
 	)
 
 	neutral_chance = clamp(
 		neutral_chance + neutral_chance_modifier,
 		0,
-		max_neutral_chance
+		100
 	)
 	
 	negative_chance = clamp(
 		negative_chance + negative_chance_modifier,
 		0,
-		max_negative_chance
+		1000
 	)
 
 	print("Positive chance:", positive_chance, " | Neutral chance:", neutral_chance, " | Negative chance:", negative_chance)
