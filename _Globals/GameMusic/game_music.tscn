@@ -1,9 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dj2yy0nxael2e"]
 
-[ext_resource type="AudioStream" uid="uid://dlgirieaul6or" path="res://Assets/Sounds/dudushort.mp3" id="1_fhuik"]
+[ext_resource type="AudioStream" uid="uid://gg87hbov0vdg" path="res://Assets/Sounds/dududunew.wav" id="1_pft3n"]
 
 [node name="GameMusic" type="AudioStreamPlayer"]
-stream = ExtResource("1_fhuik")
+stream = ExtResource("1_pft3n")
 volume_db = -7.881
 autoplay = true
-parameters/looping = true
