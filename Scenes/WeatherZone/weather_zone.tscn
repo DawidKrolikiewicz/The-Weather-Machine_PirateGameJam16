@@ -1,7 +1,7 @@
 [gd_scene load_steps=67 format=3 uid="uid://kxe1njtsgrqi"]
 
 [ext_resource type="Script" path="res://Scenes/WeatherZone/weather_zone.gd" id="1_kd8wb"]
-[ext_resource type="Resource" uid="uid://04ubxxg63r5x" path="res://Resources/WeatherData/Rain.tres" id="2_oyg8u"]
+[ext_resource type="Resource" uid="uid://04ubxxg63r5x" path="res://Resources/WeatherData/eRain.tres" id="2_oyg8u"]
 [ext_resource type="Texture2D" uid="uid://c6gjo34kypplo" path="res://Assets/Sprites/WeatherZones/Cloud_spread.png" id="4_xfon5"]
 [ext_resource type="Texture2D" uid="uid://cjbu4y6efofaw" path="res://Assets/Sprites/WeatherZones/Particles/rain.svg" id="5_gvwfw"]
 [ext_resource type="Texture2D" uid="uid://cffsnan30urk6" path="res://Assets/Sprites/WeatherZones/cloud_shadow.png" id="5_tj7wh"]

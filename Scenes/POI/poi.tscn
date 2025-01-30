@@ -262,19 +262,22 @@ script = ExtResource("3_nhnfe")
 
 [node name="WaterGauge" parent="Gauges" instance=ExtResource("3_1frcg")]
 value_per_tick = -2
+value = 80
 
 [node name="FoodGauge" parent="Gauges" instance=ExtResource("3_1frcg")]
 value_per_tick = -2
+value = 80
 
 [node name="HappyGauge" parent="Gauges" instance=ExtResource("3_1frcg")]
 value_per_tick = -2
+value = 80
 
 [node name="HealthGauge" parent="Gauges" instance=ExtResource("3_1frcg")]
 value_per_tick = 1
 
 [node name="ProductivityGauge" parent="Gauges" instance=ExtResource("3_1frcg")]
 value_per_tick = 0
-value = 70
+value = 50
 
 [node name="SpawnNextTimer" type="Timer" parent="."]
 one_shot = true

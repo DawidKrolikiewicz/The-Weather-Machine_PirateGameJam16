@@ -31,7 +31,7 @@ signal destory_me(me)
 var threshhold: float = 60
 var base_money: float = 0.5
 
-var ticks_to_spawn_new: int = 40
+var ticks_to_spawn_new: int = 25
 var spawn_new_count: int = 0
 
 func _ready() -> void:
@@ -66,13 +66,13 @@ func _on_tick_timer_timeout():
 	# SET PRODUCTIVITY GAIN FOR NEXT TICK ACCORDINGLY 
 	match(n):
 		0:
-			productivity_gauge.value_per_tick = -5
+			productivity_gauge.value_per_tick = -4
 		1:
 			productivity_gauge.value_per_tick = -2
 		2:
-			productivity_gauge.value_per_tick = 1
+			productivity_gauge.value_per_tick = 2
 		3:
-			productivity_gauge.value_per_tick = 3
+			productivity_gauge.value_per_tick = 4
 	
 	# ADD MONEY BASED ON PRODUCTIVITY LEVEL
 	SignalBus.add_money.emit(base_money * productivity_gauge.value / 100)

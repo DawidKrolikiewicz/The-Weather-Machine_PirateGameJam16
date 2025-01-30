@@ -2,25 +2,27 @@
 
 [ext_resource type="Script" path="res://Scenes/WeatherSpawner/weather_spawner.gd" id="1_gecuu"]
 [ext_resource type="Script" path="res://Resources/_Scripts/WeatherData.gd" id="2_2ce6v"]
-[ext_resource type="Resource" uid="uid://04ubxxg63r5x" path="res://Resources/WeatherData/Rain.tres" id="3_w7pw5"]
-[ext_resource type="Resource" uid="uid://bliiam1pb8a43" path="res://Resources/WeatherData/SunRays.tres" id="4_q6xjb"]
-[ext_resource type="Resource" uid="uid://bhds6fh8y0aoi" path="res://Resources/WeatherData/cheese.tres" id="5_aqxwk"]
-[ext_resource type="Resource" uid="uid://fos4vfad7ul7" path="res://Resources/WeatherData/Icecream.tres" id="6_w3akp"]
-[ext_resource type="Resource" uid="uid://crgwcecx2mc7l" path="res://Resources/WeatherData/brocoli.tres" id="7_guqmb"]
-[ext_resource type="Resource" uid="uid://bcba6bqoygoc5" path="res://Resources/WeatherData/Thunder.tres" id="8_jgryw"]
-[ext_resource type="Resource" uid="uid://dmu0pnjd3aen4" path="res://Resources/WeatherData/Snowing.tres" id="8_l13tw"]
-[ext_resource type="Resource" uid="uid://bmcu2lid51r4h" path="res://Resources/WeatherData/Grapefruit.tres" id="10_2wpbm"]
-[ext_resource type="Resource" uid="uid://cxwtucrfyv2bk" path="res://Resources/WeatherData/Cracker.tres" id="11_5b2kx"]
-[ext_resource type="Resource" uid="uid://dfuoyiawbi74v" path="res://Resources/WeatherData/spiderrain.tres" id="12_gf2t5"]
-[ext_resource type="Resource" uid="uid://tqye4qwa57jd" path="res://Resources/WeatherData/Firecloud.tres" id="13_u8pue"]
-[ext_resource type="Resource" uid="uid://cn64kgejfmj6b" path="res://Resources/WeatherData/Cthuluhucloud.tres" id="14_ndseh"]
+[ext_resource type="Resource" uid="uid://04ubxxg63r5x" path="res://Resources/WeatherData/eRain.tres" id="3_w7pw5"]
+[ext_resource type="Resource" uid="uid://bliiam1pb8a43" path="res://Resources/WeatherData/eSunRays.tres" id="4_q6xjb"]
+[ext_resource type="Resource" uid="uid://bhds6fh8y0aoi" path="res://Resources/WeatherData/eCheese.tres" id="5_aqxwk"]
+[ext_resource type="Resource" uid="uid://fos4vfad7ul7" path="res://Resources/WeatherData/mIcecream.tres" id="6_w3akp"]
+[ext_resource type="Resource" uid="uid://crgwcecx2mc7l" path="res://Resources/WeatherData/mBrocoli.tres" id="7_guqmb"]
+[ext_resource type="Resource" uid="uid://bcba6bqoygoc5" path="res://Resources/WeatherData/mThunder.tres" id="8_jgryw"]
+[ext_resource type="Resource" uid="uid://dmu0pnjd3aen4" path="res://Resources/WeatherData/mSnowing.tres" id="8_l13tw"]
+[ext_resource type="Resource" uid="uid://bmcu2lid51r4h" path="res://Resources/WeatherData/mGrapefruit.tres" id="10_2wpbm"]
+[ext_resource type="Resource" uid="uid://cxwtucrfyv2bk" path="res://Resources/WeatherData/mCracker.tres" id="11_5b2kx"]
+[ext_resource type="Resource" uid="uid://dfuoyiawbi74v" path="res://Resources/WeatherData/hSpiderrain.tres" id="12_gf2t5"]
+[ext_resource type="Resource" uid="uid://tqye4qwa57jd" path="res://Resources/WeatherData/hFirecloud.tres" id="13_u8pue"]
+[ext_resource type="Resource" uid="uid://cn64kgejfmj6b" path="res://Resources/WeatherData/hCthuluhucloud.tres" id="14_ndseh"]
 
 [node name="WeatherSpawner" type="Node2D"]
 script = ExtResource("1_gecuu")
 positive_weathers = Array[ExtResource("2_2ce6v")]([ExtResource("3_w7pw5"), ExtResource("4_q6xjb"), ExtResource("5_aqxwk")])
 neutral_weathers = Array[ExtResource("2_2ce6v")]([ExtResource("6_w3akp"), ExtResource("8_l13tw"), ExtResource("8_jgryw"), ExtResource("7_guqmb"), ExtResource("10_2wpbm"), ExtResource("11_5b2kx")])
 negative_weathers = Array[ExtResource("2_2ce6v")]([ExtResource("12_gf2t5"), ExtResource("13_u8pue"), ExtResource("14_ndseh")])
-neutral_chance = 19.0
-negative_chance = 1.0
-negative_chance_modifier = 0.01
-max_negative_chance = 10.0
+positive_chance = 100.0
+neutral_chance = 0.0
+positive_chance_modifier = -0.25
+neutral_chance_modifier = 0.25
+min_positive_chance = 0.0
+max_negative_chance = 100.0

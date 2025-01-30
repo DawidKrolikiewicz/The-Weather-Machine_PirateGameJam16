@@ -31,6 +31,15 @@ func _ready() -> void:
 	SignalBus.tick.connect(_on_tick_timer_timeout)
 
 func _on_tick_timer_timeout() -> void:
+	if neutral_chance >= 70:
+		positive_chance_modifier = -0.25
+		neutral_chance_modifier = -0.25
+		negative_chance_modifier = 0.5
+	elif positive_chance <= 0:
+		positive_chance_modifier = 0
+		neutral_chance_modifier = -0.5
+		negative_chance_modifier = 0.5
+	
 	tick_counter += 1
 	if tick_counter >= 30: # Every 30 ticks increase max weather count
 		tick_counter = 0
@@ -65,7 +74,6 @@ func get_random_weather_data() -> WeatherData:
 		
 func select_weather_from_group(weathers: Array[WeatherData]) -> WeatherData:
 	var index = randi() % weathers.size()
-	print(weathers[index])
 	return weathers[index]
 
 func calculate_sum(array: Array[float]) -> int:

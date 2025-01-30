@@ -7,5 +7,5 @@
 script = ExtResource("1_3ccbq")
 texture = ExtResource("2_xys4e")
 water_per_tick = -2
-food_per_tick = -2
+food_per_tick = -3
 happy_per_tick = -2

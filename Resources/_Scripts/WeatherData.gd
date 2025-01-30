@@ -55,12 +55,12 @@ class_name WeatherData
 ## Minimal width of fully grown weather zone[br]
 ## WARNING: IT CAN'T CHECK IF MIN <= MAX AND WILL CRASH IF IT'S WRONG
 ## @experimental
-@export_range(30, 300, 1) var min_full_size: int = 70
+@export_range(30, 600, 1) var min_full_size: int = 70
 
 ## Maximal width of fully grown weather zone[br]
 ## WARNING: IT CAN'T CHECK IF MIN <= MAX AND WILL CRASH IF IT'S WRONG
 ## @experimental
-@export_range(30, 300, 1) var max_full_size: int = 140
+@export_range(30, 600, 1) var max_full_size: int = 140
 
 ## Minimal lifetime of weather effect[br]
 ## NOTE: Currently lifetime is defined as time weather effect spends while FULLY grown[br]
