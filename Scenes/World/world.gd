@@ -12,7 +12,7 @@ class_name World
 @onready var button_bought: AudioStreamPlayer = $ButtonBought
 @onready var button_not_enough_money: AudioStreamPlayer = $ButtonNotEnoughMoney
 
-var total_money: float = 10000
+var total_money: float = 0
 var money: float = 0
 
 func _ready() -> void:

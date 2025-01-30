@@ -4,8 +4,8 @@ class_name UI
 signal button_pressed(id: int)
 
 @onready var h_box_container: HBoxContainer = $BottomPanel/HBoxContainer/PanelButtons/HBoxContainer
-@onready var label: Label = $BottomPanel/HBoxContainer/PanelMoney/PanelMoneyDisplay/Label
-@onready var label_total: Label = $BottomPanel/HBoxContainer/PanelMoney/PanelMoneyDisplay2/Label
+@onready var label: Label = $BottomPanel/HBoxContainer/PanelMoney/PanelMoneyDisplay/MarginContainer/Label
+@onready var label_total: Label = $BottomPanel/HBoxContainer/PanelMoney/PanelMoneyDisplay2/MarginContainer/Label
 
 @onready var pause_menu: Control = $PauseMenu
 @onready var game_over_panel: PanelContainer = $GameOverPanel
