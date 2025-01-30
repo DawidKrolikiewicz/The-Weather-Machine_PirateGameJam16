@@ -148,6 +148,7 @@ vertical_alignment = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button2"]
 custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -176,6 +177,7 @@ vertical_alignment = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button3"]
 custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -204,6 +206,7 @@ vertical_alignment = 2
 
 [node name="TextureRect" type="TextureRect" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button4"]
 custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("5_am1ue")
@@ -228,6 +231,7 @@ vertical_alignment = 2
 
 [node name="TextureRect" type="TextureRect" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button5"]
 custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("6_fup2h")
@@ -252,6 +256,7 @@ vertical_alignment = 2
 
 [node name="TextureRect" type="TextureRect" parent="BottomPanel/HBoxContainer/PanelButtons/HBoxContainer/Button6"]
 custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("7_62iue")
