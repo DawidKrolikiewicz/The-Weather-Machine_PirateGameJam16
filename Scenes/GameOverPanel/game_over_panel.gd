@@ -9,7 +9,7 @@ func _ready() -> void:
 	SignalBus.game_over_score.connect(_on_game_over_score)
 	
 func _on_game_over_score(score: float) -> void:
-	label_2.text = "Total money earned: %.2f" % score
+	label_2.text = "Total money earned: %.2f$" % score
 	
 func _on_button_button_down() -> void:
 	Engine.time_scale = 1.0

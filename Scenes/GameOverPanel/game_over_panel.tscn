@@ -63,6 +63,7 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("4_6lr05")
+theme_override_font_sizes/font_size = 26
 text = "BACK TO MENU"
 
 [connection signal="button_down" from="VBoxContainer/MarginContainer/Button" to="." method="_on_button_button_down"]
