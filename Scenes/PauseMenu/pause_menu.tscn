@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3oesmcbna55s"]
+[gd_scene load_steps=7 format=3 uid="uid://b3oesmcbna55s"]
 
 [ext_resource type="Script" path="res://Scenes/PauseMenu/pause_menu.gd" id="1_07wlw"]
 [ext_resource type="Texture2D" uid="uid://sivhymq6gnbs" path="res://Assets/Font/text.png" id="2_yf3tu"]
 [ext_resource type="FontFile" uid="uid://bq4gwgx4x12bq" path="res://Assets/Font/Arvo-Bold.ttf" id="3_jj2wq"]
 [ext_resource type="FontFile" uid="uid://erthirrvag8q" path="res://Assets/Font/Arvo-Regular.ttf" id="4_ewrsk"]
+
+[sub_resource type="Theme" id="Theme_ox3wn"]
+Label/colors/font_shadow_color = Color(0.162066, 0.162066, 0.162066, 1)
+Label/constants/shadow_outline_size = 27
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ltuvy"]
 atlas = ExtResource("2_yf3tu")
@@ -52,6 +56,7 @@ offset_right = 150.0
 offset_bottom = 215.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_ox3wn")
 theme_override_constants/separation = 10
 alignment = 1
 

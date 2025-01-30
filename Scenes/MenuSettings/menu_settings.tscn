@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfhl6k0oq6mkj"]
+[gd_scene load_steps=4 format=3 uid="uid://dfhl6k0oq6mkj"]
 
 [ext_resource type="Script" path="res://Scenes/MenuSettings/menu_settings.gd" id="1_kexyc"]
 [ext_resource type="FontFile" uid="uid://erthirrvag8q" path="res://Assets/Font/Arvo-Regular.ttf" id="2_xmbv1"]
+
+[sub_resource type="Theme" id="Theme_w5nwd"]
+Label/colors/font_shadow_color = Color(0.164706, 0.164706, 0.164706, 0.627451)
+Label/constants/shadow_outline_size = 25
 
 [node name="MenuSettings" type="Control"]
 layout_mode = 3
@@ -23,6 +27,7 @@ offset_right = 280.0
 offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_w5nwd")
 theme_override_constants/separation = 10
 alignment = 1
 
