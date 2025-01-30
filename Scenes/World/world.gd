@@ -12,13 +12,8 @@ class_name World
 @onready var button_bought: AudioStreamPlayer = $ButtonBought
 @onready var button_not_enough_money: AudioStreamPlayer = $ButtonNotEnoughMoney
 
-var total_money: float = 0
-var money: float = 0:
-	set(value):
-		money = value
-		if value > total_money:
-			total_money = value
-		ui.update_label(value)
+var total_money: float = 10000
+var money: float = 0
 
 func _ready() -> void:
 	SignalBus.add_money.connect(_on_add_money)
@@ -32,6 +27,8 @@ func _on_tick_timer_timeout() -> void:
 	
 func _on_add_money(value: float) -> void:
 	money += value
+	total_money += value
+	ui.update_label(money, total_money)
 	
 func _on_game_speed_changed() -> void:
 	tick_timer.wait_time = 100 / Settings.game_speed

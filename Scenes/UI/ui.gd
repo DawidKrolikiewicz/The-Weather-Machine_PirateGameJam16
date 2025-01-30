@@ -4,7 +4,9 @@ class_name UI
 signal button_pressed(id: int)
 
 @onready var h_box_container: HBoxContainer = $BottomPanel/HBoxContainer/PanelButtons/HBoxContainer
-@onready var label: Label = $BottomPanel/HBoxContainer/PanelMoneyDisplay/Label
+@onready var label: Label = $BottomPanel/HBoxContainer/PanelMoney/PanelMoneyDisplay/Label
+@onready var label_total: Label = $BottomPanel/HBoxContainer/PanelMoney/PanelMoneyDisplay2/Label
+
 @onready var pause_menu: Control = $PauseMenu
 @onready var game_over_panel: PanelContainer = $GameOverPanel
 
@@ -35,8 +37,9 @@ func _on_display_weather_info(data: WeatherData) -> void:
 	info_label_food.text = "%d" % data.food_per_tick
 	info_label_happy.text = "%d" % data.happy_per_tick
 	
-func update_label(value: float) -> void:
-	label.text = "%.2f$" % value
+func update_label(money: float, total_money: float) -> void:
+	label.text = "MONEY: %.2f$" % money
+	label_total.text = "TOTAL: %.2f$" % total_money
 
 func _on_pause_button_button_down() -> void:
 	if Engine.time_scale != 0:

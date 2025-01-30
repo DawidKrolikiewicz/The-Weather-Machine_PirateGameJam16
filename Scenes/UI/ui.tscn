@@ -61,12 +61,19 @@ size_flags_vertical = 8
 theme_override_constants/separation = 11
 alignment = 1
 
-[node name="PanelMoneyDisplay" type="Control" parent="BottomPanel/HBoxContainer"]
+[node name="PanelMoney" type="VBoxContainer" parent="BottomPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.5
+theme_override_constants/separation = 0
+
+[node name="PanelMoneyDisplay" type="Control" parent="BottomPanel/HBoxContainer/PanelMoney"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/PanelMoneyDisplay"]
+[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/PanelMoney/PanelMoneyDisplay"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -85,11 +92,36 @@ text = "MONEY: 0$"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="PanelMoneyDisplay2" type="Control" parent="BottomPanel/HBoxContainer/PanelMoney"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="BottomPanel/HBoxContainer/PanelMoney/PanelMoneyDisplay2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.5
+offset_top = -21.0
+offset_right = 80.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_s8gkt")
+theme_override_font_sizes/font_size = 30
+text = "TOTAL: 0$"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="PanelButtons" type="Control" parent="BottomPanel/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 4.0
+size_flags_stretch_ratio = 3.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BottomPanel/HBoxContainer/PanelButtons"]
 layout_mode = 1
@@ -293,10 +325,8 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -84.0
-offset_top = -37.0
-offset_right = -84.0
-offset_bottom = 38.0
+offset_top = -14.5
+offset_bottom = 14.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("9_os1j8")
