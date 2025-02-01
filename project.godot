@@ -14,7 +14,7 @@ config/name="PirateGameJam"
 config/tags=PackedStringArray("gamejam_piratesoftware")
 run/main_scene="res://Scenes/MainMenu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://Assets/Sprites/_Other/stat_food_1.png"
+config/icon="res://Assets/Sprites/favicon.png"
 
 [autoload]
 
